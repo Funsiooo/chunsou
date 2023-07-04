@@ -91,7 +91,7 @@ example:
 
 ![threads](images/7.png)
 
-> 代理流量（http、https、socks5） python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
+> 代理流量（http、https、socks5） python3 chunsou.py -f urls.txt -p http://127.0.0.1:8080
 
 ![proxy](images/8.png)
 
