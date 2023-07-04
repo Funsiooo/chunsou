@@ -1,4 +1,4 @@
-![chunsou](E:\Security file\learning notes\images\logo-16884752796855.png)
+![chunsou](images/logo.png)
 
 
 
