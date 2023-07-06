@@ -56,6 +56,10 @@ example:
 目前输出文件默认保存在 `results` 目录下，现仅支持`txt`格式，指纹识别输出信息显示顺序 `| 已匹配到的指纹 | 网站标题 | 网站所用的技术栈`
 
 
+> 安装依赖
+```
+pip3 install -r requirements.txt
+```
 
 > 单目标指纹识别 python3 chunsou.py -u http://example.com
 
