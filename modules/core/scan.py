@@ -95,7 +95,7 @@ def scan_rule(url):
     ico_hash = get_hash(ico_content)
 
 
-    with open('modules/config/finger.json', 'r',encoding='utf-8') as file:
+    with open('modules/configs/finger.json', 'r',encoding='utf-8') as file:
         fingerprint = json.load(file)
 
     try:

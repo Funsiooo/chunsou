@@ -55,7 +55,7 @@ def fofa_start():
     print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
           f"]{Colors.RESET} {Colors.GREEN}Starting invoke fofa api results are as follows{Colors.RESET}")
     print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-          f"]{Colors.RESET} {Colors.GREEN}you can in the /config/config.ini to adjust result quantity"
+          f"]{Colors.RESET} {Colors.GREEN}you can in the /configs/config.ini to adjust result quantity"
           f"Web stack{Colors.RESET}")
 
 

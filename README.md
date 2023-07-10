@@ -6,7 +6,7 @@
 
 ![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou-bolltgreen?style=flat-square&logo=github)![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?style=flat-square&logo=github)![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?style=flat-square&logo=github)
 
-Chunsou（春蒐），Python3编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
+Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
 
 
 
@@ -56,10 +56,6 @@ example:
 目前输出文件默认保存在 `results` 目录下，现仅支持`txt`格式，指纹识别输出信息显示顺序 `| 已匹配到的指纹 | 网站标题 | 网站所用的技术栈`
 
 
-> 安装依赖
-```
-pip3 install -r requirements.txt
-```
 
 > 单目标指纹识别 python3 chunsou.py -u http://example.com
 
@@ -95,7 +91,7 @@ pip3 install -r requirements.txt
 
 ![threads](images/7.png)
 
-> 代理流量（http、https、socks5） python3 chunsou.py -f urls.txt -p http://127.0.0.1:8080
+> 代理流量（http、https、socks5） python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 
 ![proxy](images/8.png)
 

@@ -79,7 +79,7 @@ def fofa_main():
 
 
     config = configparser.ConfigParser()
-    config.read('modules/config/config.ini')
+    config.read('modules/configs/config.ini')
 
     fofa_email = config.get('fofa_email', 'email').strip('"')
 
