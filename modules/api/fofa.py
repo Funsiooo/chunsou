@@ -7,6 +7,7 @@
 @Github  ：https://github.com/Funsiooo
 '''
 
+
 '''
 FOFA_API 接口：https://fofa.info/api/v1/search/all?email=fofa_邮箱&key=fofa_key&qbase64
 =需要查询的语法base64编码&page=查询的页数&size=9999查询显示的数量
@@ -29,6 +30,8 @@ api支持获取的字段：host, title, ip, domain, port, country, province, cit
 icon_hash=""
 '''
 
+
+
 import requests
 import base64
 import configparser
@@ -37,6 +40,14 @@ from modules.core.color import Colors
 from modules.core.time import print_start_time
 from modules.core.args import argument
 from modules.core.output import script_end,fofa_output_dir,fofa_end,fofa_start
+from modules.core.output import fofa_save_to_excel
+import sys
+import csv
+from urllib.parse import urlparse
+import argparse
+from openpyxl import Workbook
+import os
+from openpyxl.styles import Font, PatternFill,Border, Side
 
 
 def base64_encode(string):
@@ -45,7 +56,8 @@ def base64_encode(string):
     return base64_bytes
 
 
-def fofa_search(email,key,qbase64,page,size):
+def fofa_search(email,key,qbase64,page,size,fields):
+    # api 接口
     api = "https://fofa.info/api/v1/search/all"
 
     params = {
@@ -53,7 +65,8 @@ def fofa_search(email,key,qbase64,page,size):
         'key':key,
         'qbase64':qbase64,
         'page':page,
-        'size':size
+        'size':size,
+        'fields': fields
     }
 
     try:
@@ -77,9 +90,11 @@ def fofa_main():
 
     fofa_page = 1
 
+    fofa_fields = 'host,title,domain,link,ip,port,base_protocol,server'
+
 
     config = configparser.ConfigParser()
-    config.read('modules/configs/config.ini')
+    config.read('modules/config/config.ini')
 
     fofa_email = config.get('fofa_email', 'email').strip('"')
 
@@ -95,27 +110,15 @@ def fofa_main():
               f"correctly"
               f".{Colors.RESET}")
 
-    results = fofa_search(fofa_email,fofa_key,fofa_query_base64,fofa_page,fofa_size)
+    results = fofa_search(fofa_email,fofa_key,fofa_query_base64,fofa_page,fofa_size,fofa_fields)
 
     fofa_start()
 
+    for result in results:
+        fofa_results_url = result[0]
+        print(f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET} {fofa_results_url}")
 
-    try:
-        with open(out_file, 'w') as file:
-            for result in results:
+    fofa_end()
 
-                print(f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET} {Colors.YELLOW}{result[0]}{Colors.RESET}")
+    fofa_save_to_excel(results)
 
-                if not result[0].startswith('http://') and not result[0].startswith('https://'):
-                    http_result = 'http://' + result[0]
-                    https_result = 'https://' + result[0]
-
-                    file.write(http_result + '\n')
-                    file.write(https_result + '\n')
-
-            fofa_end()
-
-
-    except Exception as e:
-        print(f"{Colors.CYAN}{print_start_time()} {Colors.RED}[-]{Colors.RESET} {Colors.GREEN}[INFO"
-              f"]{Colors.RESET} fofa invoke fail, please check your network or fofa syntax" + str(e))

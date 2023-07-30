@@ -5,6 +5,441 @@
         "location": "body",
         "keyword": ["/seeyon/USER-DATA/IMAGES/LOGIN/login.gif"]
     }, {
+        "cms": "悦泰节能 智能数据网关",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/FWlib3/resources/css/xtheme-gray.cssz"]
+    }, {
+        "cms": "惠尔顿 e地通Socks5 VPN登录系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["e地通Socks5 VPN登录系统"]
+    }, {
+        "cms": "电信中兴ZXHN F450A网关",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["ZXHN F450A"]
+    }, {
+        "cms": "电信天翼网关F460",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["F460"]
+    }, {
+        "cms": "电信网关配置管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["src=\"img/dl.gif\"", "系统登录"]
+    }, {
+        "cms": "磊科 Netcore",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["磊科Netcore"]
+    }, {
+        "cms": "西迪特 Wi-Fi Web管理",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["Wi-Fi Web管理"]
+    }, {
+        "cms": "锐捷网络股份有限公司 无线smartweb管理系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["无线smartWeb--登录页面"]
+    }, {
+        "cms": "飞鱼星 家用智能路由",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["飞鱼星家用智能路由"]
+    }, {
+        "cms": "帆软报表 2012",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["down.download?FM_SYS_ID"]
+    }, {
+        "cms": "启莱OA",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["window.location.href = MainPageFileName;\n\t\t\t//window.location = \"Product.aspx?WebID=134"]
+    }, {
+        "cms": "魅课OM视频会议系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["OMeeting视频会议"]
+    }, {
+        "cms": "O2OA",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["1367173865"]
+    }, {
+        "cms": "O2OA",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["O2OA"]
+    }, {
+        "cms": "魅课OM视频会议系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["OM视频会议"]
+    }, {
+        "cms": "魅课OM视频会议系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["OM免费网络视频会议系统"]
+    }, {
+        "cms": "飞视美-视频会议系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["飞视美视频会议系统"]
+    }, {
+        "cms": "霆智科技 VA虚拟应用平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["EAA益和应用接入系统"]
+    }, {
+        "cms": "零视科技 H5S视频平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["H5S视频平台|WEB"]
+    }, {
+        "cms": "金笛短信中间件(WE<title>\n\t金笛短信中间件(WEB版)\n\n</title>B版)",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["<title>\n\t金笛短信中间件(WEB版)\n\n</title>"]
+    }, {
+        "cms": "金笛短信中间件(WEB版)",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["金笛短信中间件(WEB版)"]
+    }, {
+        "cms": "网御星云 web防护系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["<title>网页防篡改系统 </title>","img src=\"images/loading.gif"]
+    }, {
+        "cms": "紫光电子档案管理系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["紫光档案管理系统——登录"]
+    }, {
+        "cms": "紫光电子档案管理系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["紫光档案管理系统——登录"]
+    }, {
+        "cms": "章管家",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["章管家登录-公章在外防私盖"]
+    }, {
+        "cms": "KEDACOM 网络键盘控制台",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["网络键盘控制台"]
+    }, {
+        "cms": "MTS转码服务器",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["MTS转码服务器——苏州科达科技股份有限公司"]
+    }, {
+        "cms": "畅捷CRM",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["畅捷CRM"]
+    }, {
+        "cms": "深信服 行为感知系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["isHighPerformance : !!SFIsHighPerformance,"]
+    }, {
+        "cms": "浪潮ClusterEngineV4.0",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["TSCEV4.0 login"]
+    }, {
+        "cms": "杭州法源软件 法律知识数据库系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["2018105215"]
+    }, {
+        "cms": "杭州法源软件 法律知识数据库系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["实践教学平台 - 杭州法源软件开发有限公司"]
+    }, {
+        "cms": "智慧校园管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["DC_Login/QYSignUp"]
+    }, {
+        "cms": "思福迪堡垒机",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["Logbase运维安全管理系统"]
+    }, {
+        "cms": "拓尔思-TRS",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["Login page for TRS Media Asset Management System"]
+    }, {
+        "cms": "拓尔思-TRS",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["<title>TRS媒资管理系统登录页面</title>"]
+    }, {
+        "cms": "安美数字 酒店宽带运营系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["href=\"http://www.amttgroup.com/","img src=\"/images/amtt_logo.gif\"","安美数字"]
+    }, {
+        "cms": "安美数字 酒店宽带运营系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["酒店宽带运营系统"]
+    }, {
+        "cms": "安徽阳光心健 心理测量平台",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["3974070341"]
+    }, {
+        "cms": "吉拉科技 LVS精益价值管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Supperd By 吉拉科技"]
+    }, {
+        "cms": "会捷通云视讯",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/him/api/rest/v1.0/node/role"]
+    }, {
+        "cms": "云时空社会化商业ERP系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["云时空社会化商业ERP系统"]
+    }, {
+        "cms": "云时空社会化商业ERP系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["img src=\"/static/img/yunlogo_home.png"]
+    }, {
+        "cms": "北京久其财务报表",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["src=\"/netrep/js/func.js\">", "src=\"/netrep/js/des.js\">"]
+    }, {
+        "cms": "北京久其财务报表",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/netrep/sysmgr/usermanager/reguser.jsp"]
+    }, {
+        "cms": "KubeOperator",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["KubeOperator"]
+    }, {
+        "cms": "Kubepi",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["KubePi"]
+    }, {
+        "cms": "Kubepi",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["link rel=\"icon\" href=\"/kubepi/fav.png"]
+    }, {
+        "cms": "Kubepi",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["link rel=\"icon\" href=\"/kubepi/link.ico"]
+    }, {
+        "cms": "Konga",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["618690133"]
+    }, {
+        "cms": "Konga",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["Konga"]
+    }, {
+        "cms": "Jellyfin",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["Jellyfin"]
+    }, {
+        "cms": "JeecgBoot-企业级低代码平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["var htmlRoot = document.getElementById('htmlRoot');", "var theme = window.localStorage.getItem('__APP__DARK__MODE__');"]
+    }, {
+        "cms": "JeecgBoot-企业级低代码平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["href=/logo.png>", "src=/cdn/babel-polyfill/polyfill_7_2_5.js"]
+    }, {
+        "cms": "JeecgBoot-企业级低代码平台",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["JeecgBoot 企业级低代码平台"]
+    }, {
+        "cms": "ICEFLOW VPN Router",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["ICEFLOW VPN Router"]
+    }, {
+        "cms": "AVEVA InTouch安全网关",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["InTouch Access Anywhere"]
+    }, {
+        "cms": "TerraMaster TOS",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["TOS"]
+    }, {
+        "cms": "蓝海卓越计费管理系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["蓝海卓越计费管理系统"]
+    }, {
+        "cms": "中国移动 禹路由",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["互联世界 物联未来-登录"]
+    }, {
+        "cms": "用友 NC Cloud",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["1596996317"]
+    }, {
+        "cms": "用友 NC Cloud",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["<title> Application </title>","src=\"../../../../platform/resource/yonyou-yyy.js"]
+    }, {
+        "cms": "Apache Dubbo",
+        "method": "keyword",
+        "location": "header",
+        "keyword": ["realm=\"dubbo\""]
+    }, {
+        "cms": "Apache Superset",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["Superset"]
+    }, {
+        "cms": "Apache Superset",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["src=\"/static/assets/images/superset-logo-horiz.png\""]
+    }, {
+        "cms": "nginxWebUI",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["nginxWebUI"]
+    }, {
+        "cms": "才茂网关系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Document Error: Unauthorized",">Access Error: Unauthorized","Access to this document requires a User ID"]
+    }, {
+        "cms": "TOTOLink 路由器",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["TOTOLINK"]
+    }, {
+        "cms": "TVT NVMS-1000",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["NVMS-1000"]
+    }, {
+        "cms": "Selea Camera",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Selea ANPR Camera"]
+    }, {
+        "cms": "Selea Camera",
+        "method": "keyword",
+        "location": "body",
+        "keyword": [" href=\"css/selea.css\"", "href=\"live.html\">"]
+    }, {
+        "cms": "NetMizer 日志管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["NetMizer 日志管理系统"]
+    }, {
+        "cms": "KEDACOM 数字系统接入网关",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["src='images/ind_log_kedacom.png"]
+    }, {
+        "cms": "发货100",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Web Configurator"]
+    }, {
+        "cms": "发货100",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Powered by 发货100"]
+    }, {
+        "cms": "发货100",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["发货100-虚拟商品自动发货系统", "虚拟商品,自动发货,在线支付,付费阅读"]
+    }, {
+        "cms": "PB CMS",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Powered by", "PB-CMS"]
+    }, {
+        "cms": "BSPHP",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["会员管理系统", "href=\"http://Bsphp.com/\">Bsphp"]
+    }, {
+        "cms": "Anchor CMS",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Anchor CMS", "themes/default/img/favicon.png"]
+    }, {
+        "cms": "Franklin Fueling Systems",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Franklin Fueling Systems"]
+    }, {
+        "cms": "Metabase",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Metabase", "/app/assets/img/apple-touch-icon.png"]
+    }, {
+        "cms": "Apache RocketMQ",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["RocketMq"]
+    }, {
+        "cms": "Apache RocketMQ",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["RocketMq-console-ng"]
+    },{
+        "cms": "Apache RocketMQ",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["RocketMQ-Dashboard"]
+    }, {
+        "cms": "大华-智慧园区综合管理平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["DSS助手", "/WPMS/asset/img/black/"]
+    }, {
+        "cms": "大华城市安防监控系统平台管理",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["attachment_downloadByUrlAtt.action"]
+    }, {
+        "cms": "大华e眼远程视频监控平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["../../images/uiv2/login_input_box_user2.png", "../../images/uiv2/login_input_box_password2.png"]
+    }, {
         "cms": "Redmi 路由器",
         "method": "keyword",
         "location": "body",
@@ -390,7 +825,7 @@
         "location": "body",
         "keyword": ["weaver,e-mobile"]
     }, {
-        "cms": "ecology",
+        "cms": "泛微OA ecology",
         "method": "keyword",
         "location": "header",
         "keyword": ["ecology_JSessionid"]
@@ -4537,8 +4972,8 @@
      }, {
         "cms": "百卓 Smart 多业务安全网关",
         "method": "keyword",
-        "location": "body",
-        "keyword": ["writeCustomBgImg.jsp","baseajax","LoginLogo"]
+        "location": "title",
+        "keyword": ["Smart--管理平台"]
      }, {
         "cms": "中远麒麟堡垒机",
         "method": "keyword",
@@ -6711,7 +7146,7 @@
         "location": "body",
         "keyword": ["content=\"0;url=vsplogin.action"]
     }, {
-        "cms": "AVCON6",
+        "cms": "AVCON6 系统管理平台",
         "method": "keyword",
         "location": "body",
         "keyword": ["filename=avcon6setup.exe", "language_dispose.action"]
@@ -8644,7 +9079,7 @@
         "cms": "C-Lodop",
         "method": "keyword",
         "location": "body",
-        "keyword": ["<h1>关于c-lodop免费和注册授权</h1>", "document.getelementbyid(\"reqid\".value==document.getelementbyid(\"licid\".value"]
+        "keyword": ["关于C-Lodop免费和注册授权", "document.getElementById(\"reqid\").value==document.getElementById(\"licid\").value)"]
     }, {
         "cms": "Cloodie-HIS",
         "method": "keyword",
@@ -8721,7 +9156,7 @@
         "location": "body",
         "keyword": ["content=\"开源团主机管理系统"]
     }, {
-        "cms": "cmtietong-Router",
+        "cms": "中国铁通 禹路由",
         "method": "keyword",
         "location": "body",
         "keyword": ["src=\"img/by_web.png\""]
@@ -12311,11 +12746,6 @@
         "location": "body",
         "keyword": ["by <a href=\"https://goaccess.io/\">goaccess</a>"]
     }, {
-        "cms": "GoAhead-Webs",
-        "method": "keyword",
-        "location": "header",
-        "keyword": ["goahead-webs"]
-    }, {
         "cms": "GoCDN",
         "method": "keyword",
         "location": "header",
@@ -12510,11 +12940,6 @@
         "method": "keyword",
         "location": "body",
         "keyword": ["var title    = \"预约挂号系统\";"]
-    }, {
-        "cms": "Gunicorn",
-        "method": "keyword",
-        "location": "header",
-        "keyword": ["gunicorn"]
     }, {
         "cms": "GuoBaoJinTai-Prodcut",
         "method": "keyword",
@@ -14611,11 +15036,6 @@
         "location": "body",
         "keyword": ["onlinequery/querylist.aspx", "langchao.ecgap.outportal"]
     }, {
-        "cms": "Inspur-InCloud-Sphere",
-        "method": "keyword",
-        "location": "body",
-        "keyword": ["class=\"easyui-layout"]
-    }, {
         "cms": "Inspur-Server",
         "method": "keyword",
         "location": "body",
@@ -16126,7 +16546,7 @@
         "location": "body",
         "keyword": ["/cgi-bin/sw_login.cgi", "document.form1.submit("]
     }, {
-        "cms": "libsys-Library",
+        "cms": "汇文 图书馆书目检索系统",
         "method": "keyword",
         "location": "body",
         "keyword": ["<div class=\"header_opac_logo\">"]
@@ -20911,11 +21331,6 @@
         "location": "header",
         "keyword": ["x-serendipity-contentlang", "x-serendipity-interfacelang"]
     }, {
-        "cms": "Servlet",
-        "method": "keyword",
-        "location": "header",
-        "keyword": ["servlet"]
-    }, {
         "cms": "Serv-U-FTP",
         "method": "keyword",
         "location": "body",
@@ -21316,7 +21731,7 @@
         "location": "header",
         "keyword": ["set-cookie: _sling_skey"]
     }, {
-        "cms": "SMARTBI",
+        "cms": "Smartbi",
         "method": "keyword",
         "location": "body",
         "keyword": ["gcfutil = jsloader.resolve('smartbi.gcf.gcfutil'"]
@@ -21476,7 +21891,7 @@
         "location": "body",
         "keyword": ["<meta http-equiv=\"refresh\" content=\"0; url=/hmi/\">", "<frame name=\"frleft\" scrolling=\"no\" id=\"frleft\" src=\"qfrleft.aspx\">"]
     }, {
-        "cms": "Solr",
+        "cms": "Apache Solr",
         "method": "keyword",
         "location": "body",
         "keyword": ["solrcore initialization failures", "app_config.solr_path"]
@@ -24186,7 +24601,7 @@
         "location": "header",
         "keyword": ["server: voole_cdn1.0"]
     }, {
-        "cms": "VOS3000",
+        "cms": "昆石网络 VOS3000虚拟运营支撑系统",
         "method": "keyword",
         "location": "body",
         "keyword": ["content=\"vos3000", "images/vos3000.ico"]
@@ -25215,11 +25630,6 @@
         "method": "keyword",
         "location": "body",
         "keyword": ["/shophome/ajaxgetcompetemessagelist.action", "/shopfront/shoppingcar/gotoshoppingcartajax.action"]
-    }, {
-        "cms": "Yonyou-TurboCRM",
-        "method": "keyword",
-        "location": "body",
-        "keyword": ["turboui.js"]
     }, {
         "cms": "yonyou-U8",
         "method": "keyword",
@@ -27861,17 +28271,17 @@
             "location": "body",
             "keyword": ["CONTENT=\"DORG"]
         }, {
-            "cms": "VOS3000",
+            "cms": "昆石网络 VOS3000虚拟运营支撑系统",
             "method": "keyword",
             "location": "body",
             "keyword": ["<meta name=\"keywords\" content=\"VOS3000"]
         }, {
-            "cms": "VOS3000",
+            "cms": "昆石网络 VOS3000虚拟运营支撑系统",
             "method": "keyword",
             "location": "body",
             "keyword": ["<meta name=\"description\" content=\"VOS3000"]
         }, {
-            "cms": "VOS3000",
+            "cms": "昆石网络 VOS3000虚拟运营支撑系统",
             "method": "keyword",
             "location": "body",
             "keyword": ["images/vos3000.ico"]
@@ -27880,11 +28290,6 @@
             "method": "keyword",
             "location": "body",
             "keyword": ["Powered by Elite"]
-        }, {
-            "cms": "iframe",
-            "method": "keyword",
-            "location": "body",
-            "keyword": ["<iframe"]
         }, {
             "cms": "EZCMS",
             "method": "keyword",
@@ -30622,11 +31027,6 @@
             "location": "body",
             "keyword": ["http://www.yuysoft.com/"]
         }, {
-            "cms": "育友软件",
-            "method": "keyword",
-            "location": "body",
-            "keyword": ["技术支持"]
-        }, {
             "cms": "STcms",
             "method": "keyword",
             "location": "body",
@@ -31557,17 +31957,17 @@
             "location": "body",
             "keyword": ["vindex_right_d"]
         }, {
-            "cms": "AVCON6",
+            "cms": "AVCON6 系统管理平台",
             "method": "keyword",
             "location": "body",
             "keyword": ["filename=AVCON6Setup.exe"]
         }, {
-            "cms": "AVCON6",
+            "cms": "AVCON6 系统管理平台",
             "method": "keyword",
             "location": "body",
             "keyword": ["language_dispose.action"]
         }, {
-            "cms": "AVCON6",
+            "cms": "AVCON6 系统管理平台",
             "method": "keyword",
             "location": "body",
             "keyword": ["avcon"]
@@ -34447,16 +34847,6 @@
             "location": "body",
             "keyword": ["F5 Networks"]
         }, {
-            "cms": "EasyUI",
-            "method": "keyword",
-            "location": "body",
-            "keyword": ["yui.js"]
-        }, {
-            "cms": "EasyUI",
-            "method": "keyword",
-            "location": "body",
-            "keyword": ["yui.min.js"]
-        }, {
             "cms": "Rapid Logic",
             "method": "keyword",
             "location": "body",
@@ -34746,11 +35136,6 @@
             "method": "keyword",
             "location": "body",
             "keyword": ["webmail"]
-        }, {
-            "cms": "qiboSoft(齐博)",
-            "method": "keyword",
-            "location": "body",
-            "keyword": ["qiboSoft"]
         }, {
             "cms": "Ecshop(商派)",
             "method": "keyword",
@@ -35722,11 +36107,6 @@
             "location": "header",
             "keyword": ["acarsd"]
         }, {
-            "cms": "Access-Control",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["Access-Control-Allow-Methods"]
-        }, {
             "cms": "dreambox",
             "method": "keyword",
             "location": "header",
@@ -35771,11 +36151,6 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["Cisco-VDS"]
-        }, {
-            "cms": "Servlet",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["Servlet"]
         }, {
             "cms": "Cisco IronPort",
             "method": "keyword",
@@ -36852,11 +37227,6 @@
             "location": "header",
             "keyword": ["Server:Lotus-Domino"]
         }, {
-            "cms": "gunicorn",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["gunicorn"]
-        }, {
             "cms": "Allegro-Software-RomPager",
             "method": "keyword",
             "location": "header",
@@ -37021,11 +37391,6 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["atvise"]
-        }, {
-            "cms": "GoAhead-Webs",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["GoAhead-Webs"]
         }, {
             "cms": "Citrix-Web-PN-Server",
             "method": "keyword",
@@ -45437,11 +45802,6 @@
             "location": "header",
             "keyword": ["ColorMeShop"]
         }, {
-            "cms": "Kestrel",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["Kestrel"]
-        }, {
             "cms": "GoSquared",
             "method": "keyword",
             "location": "header",
@@ -50992,7 +51352,7 @@
             "location": "header",
             "keyword": ["欧途智能通关云平台"]
         }, {
-            "cms": "昆石网络 VOS3000",
+            "cms": "昆石网络 VOS3000虚拟运营支撑系统",
             "method": "keyword",
             "location": "header",
             "keyword": ["昆石网络 VOS3000"]
@@ -52182,7 +52542,7 @@
             "location": "header",
             "keyword": ["MiniEOS WS"]
         }, {
-            "cms": "QiAnXin web server",
+            "cms": "奇安信 web server",
             "method": "keyword",
             "location": "header",
             "keyword": ["QiAnXin web server"]

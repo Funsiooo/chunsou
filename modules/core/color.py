@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 
 '''
-@File    ：assect_collect.py
+@File    ：color.py
 @IDE     ：PyCharm
 @Author  ：Funsiooo
 @Github  ：https://github.com/Funsiooo
 '''
 
+
 import os
 os.system('')
+
 
 class Colors:
     CYAN = '\033[38;5;67m'  # 时间

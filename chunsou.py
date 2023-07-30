@@ -14,7 +14,7 @@ from modules.api.fofa import fofa_main
 from modules.core.scan import lists_main,single_main
 from modules.core.color import Colors
 from modules.core.time import print_start_time
-
+from modules.core.check import check_version
 
 def main():
     args = argument()
@@ -26,7 +26,6 @@ def main():
         if args.file:
             lists_main(args.file)
 
-
         if args.domain:
             subdomain_single()
 
@@ -35,6 +34,7 @@ def main():
 
         if args.fofa:
             fofa_main()
+
 
     except Exception as e:
         print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}{Colors.RED}[-] Error occurred , Check whether the "

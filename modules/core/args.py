@@ -7,6 +7,7 @@
 @Github  ：https://github.com/Funsiooo
 '''
 
+
 import argparse
 
 def argument():
@@ -33,7 +34,7 @@ def argument():
                                                     "-f , --file           python3 chunsou.py -f urls.txt\n  "
                                                     "-p  , --proxy         python3 chunsou.py -u http://example.com -p http://127.0.0.1\n  "
                                                     "-t  , --threads       python3 chunsou.py -f urls.txt -t 100\n  "
-                                                    "-o  , --output        python3 chunsou.py -f -o results.txt\n  "        
+                                                    "-o  , --output        python3 chunsou.py -f -o results.xlsx\n  "        
                                                     "-du , --domain        python3 chunsou.py -du example.com\n  "
                                                     "-df , --domains       python3 chunsou.py -df domains.txt\n  "
                                                     "-fo , --fofa          python3 chunsou.py -fo domain=\"example.com\""  )

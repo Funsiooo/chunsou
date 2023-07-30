@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 import requests
 import base64
 import mmh3
@@ -36,10 +37,8 @@ def get_ico_url(url):
     warnings.filterwarnings('ignore', category=InsecureRequestWarning)
     headers = User_Agent()
     try:
-
         response = requests.get(url, verify=False, timeout=3, headers=headers)
         html = response.text
-
         icon_index = html.find("<link rel=\"icon\"")
         shortcut_index = html.find("<link rel=\"shortcut icon\"")
 
