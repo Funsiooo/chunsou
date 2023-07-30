@@ -4,7 +4,7 @@
 
 ## 简介
 
-![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou-bolltgreen?style=flat-square&logo=github)![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?style=flat-square&logo=github)![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?style=flat-square&logo=github)
+![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou(%E6%98%A5%E8%92%90)-bottlegreen?logo=github)![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?logo=github)![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?logo=github)
 
 Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
 
@@ -14,7 +14,7 @@ Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于�
 
 Chunsou（春蒐）支持多线程扫描，默认线程为50，可根据需求指定线程数；可联动oneforall进行子域名爆破；支持调用 fofa api 进行资产收集；自定义流量代理；指定输出结果路径
 
-![help](images/1.png)
+![image-20230730114043749](/images/1.png)
 
 ```
 usage: python3 chunsou.py [options]
@@ -53,7 +53,9 @@ example:
 
 > 说明
 
-目前输出文件默认保存在 `results` 目录下，现仅支持`txt`格式，指纹识别输出信息显示顺序 `| 已匹配到的指纹 | 网站标题 | 网站所用的技术栈`
+目前输出文件默认保存在 `results` 目录下，现支持`txt`、`xlsx` 格式，指纹识别输出信息显示顺序 `| 已匹配到的指纹 | 网站标题 | 网站所用的技术栈`
+
+
 
 > 安装依赖
 
@@ -61,49 +63,41 @@ example:
 pip3 install -r requirements.txt
 ```
 
-> 单目标指纹识别 python3 chunsou.py -u http://example.com
-
-![scan_single](images/2.png)
-
-> 多目标指纹识别 python3 chunsou.py -f urls.txt
-
-![scan_multi](images/3.png)
-
-> 单目标子域名爆破 python3 chunsou.py -du example.com
-
-目前调用 oneforall 进行子域名爆破
-
-![domain_single](images/4.png)
 
 
+> 具体使用指令
 
-> 多目标子域名爆破 python3 chunsou.py -df domains.txt
+```python
+# 单目标指纹识别
+python3 chunsou.py -u http://example.com
 
-![domain_multi](images/5.png)
+# 多目标指纹识别
+python3 chunsou.py -f urls.txt
 
+# 单目标子域名爆破(目前调用 oneforall 进行子域名爆破)
+python3 chunsou.py -du example.com
 
+# 多目标子域名爆破
+python3 chunsou.py -df domains.txt
 
-> 调用 fofa api 进行资产收集 python3 chunsou.py -fo domain="example.com"
+# 调用 fofa api 进行资产收集,需要在 /modules/config/config.ini 进行 fofa api 配置
+python3 chunsou.py -fo domain="example.com"
 
-需要在 `/modules/config/config.ini` 进行 fofa api 配置
+# 指定线程（默认50）
+python3 chunsou.py -u http://example.com -t 100
 
-![fofa](images/6.png)
+# 指定输出结果格式（txt、xlsx）
+python3 chunsou.py -f urls.txt -o result.xlsx
 
-
-
-> 指定线程（默认50） python3 chunsou.py -u http://example.com -t 100
-
-![threads](images/7.png)
-
-> 代理流量（http、https、socks5） python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
-
-![proxy](images/8.png)
+# 代理流量（http、https、socks5）
+python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
+```
 
 
 
 ## 指纹
 
-![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E6%9D%A5%E6%BA%90-orange?style=flat-square&logo=adminer)![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E8%A7%84%E5%88%99-blue?style=flat-square&logo=hyperledger)
+![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E6%9D%A5%E6%BA%90-orange?logo=adminer)![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E8%A7%84%E5%88%99-blue?logo=hyperledger)
 
 部分指纹来源于优秀开源项目 [Ehole](https://github.com/EdgeSecurityTeam/EHole) 、 [dismap](https://github.com/zhzyker/dismap)、 以及部分自收集，目前指纹规则条数约 10000+ (指纹条数，非程序个数)
 
@@ -139,6 +133,5 @@ pip3 install -r requirements.txt
 
 ```
 1、后续加强对现有指纹的适配以及不定期更新自收集的指纹
-2、bug反馈：https://github.com/Funsiooo/Chunsou/issues
+2、bug反馈：https://github.com/Funsiooo/chunsou/issues
 ```
-
