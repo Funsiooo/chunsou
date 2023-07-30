@@ -7,7 +7,9 @@
 @Github  ：https://github.com/Funsiooo
 '''
 
+
 from modules.core.time import current_time
+
 
 def banner():
     ORANGE = '\033[01;38;2;252;166;82m'
@@ -20,7 +22,7 @@ def banner():
  / __|| '_ \ | | | || '_ \ / __| / _ \ | | | |
 | (__ | | | || |_| || | | |\__ \| (_) || |_| |
  \___||_| |_| \__,_||_| |_||___/ \___/  \__,_|                    
-    https://github.com/Funsiooo  By Funsiooo
+    https://github.com/Funsiooo  By Funsiooo 
     '''
 
     currrent_time = f" [*] Starting @ {current_time()}\n"
@@ -28,16 +30,16 @@ def banner():
     print(color_banner)
     print(currrent_time)
 
+
 def banner_2():
     ORANGE = '\033[01;38;2;252;166;82m'
     RESET = '\033[0m'
-
     banner = f'''
       ______                                    
 _________  /_____  _________________________  __
 _  ___/_  __ \  / / /_  __ \_  ___/  __ \  / / /
 / /__ _  / / / /_/ /_  / / /(__  )/ /_/ / /_/ / 
-\___/ /_/ /_/\__,_/ /_/ /_//____/ \____/\__,_/                     
+\___/ /_/ /_/\__,_/ /_/ /_//____/ \____/\__,_/  v 1.3               
     http://github.com/Funsiooo By Funsiooo
     '''
 
@@ -45,3 +47,4 @@ _  ___/_  __ \  / / /_  __ \_  ___/  __ \  / / /
     color_banner = ORANGE + banner + RESET
     print(color_banner)
     print(currrent_time)
+
