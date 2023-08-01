@@ -1,18 +1,20 @@
-![chunsou](../images/logo.png)
+![chunsou](images/logo.png)
 
 
 
-## 简介
+## 📖 Introduction
 
-![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou(%E6%98%A5%E8%92%90)-bottlegreen?logo=github)![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?logo=github)![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?logo=github)
+![Static Badge](https://img.shields.io/badge/tool-chunsou-bottlegreen?style=query&logo=github)![Static Badge](https://img.shields.io/badge/language-python-blue?style=query&logo=github)![Static Badge](https://img.shields.io/badge/positioning-web%20fingerprint%20recognition-orange?style=query&logo=github)
 
-Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
+Chunsou is a multi-threaded web fingerprint recognition tool written in Python, which is suitable for security testers to identify assets, converge risks, and investigate enterprise Internet assets in the early stage. It mainly focuses on web assets for fingerprint recognition, currently supporting about 10000+ fingerprint rules. In addition, the tool also provides auxiliary functions such as subdomain blasting and FOFA asset collection. The tool was developed with the aim of helping network security personnel improve the efficiency of asset identification and management, and assist them in conducting testing work.
 
 
 
-## 选项
 
-Chunsou（春蒐）支持多线程扫描，默认线程为50，可根据需求指定线程数；可联动oneforall进行子域名爆破；支持调用 fofa api 进行资产收集；自定义流量代理；指定输出结果路径
+
+## 🥏 Options
+
+Chunsou is capable of multi-threaded scanning with the default number of threads set to 50, which can be specified according to the user's requirements. It can be linked with oneforall for subdomain blasting and supports calling the fofa API for asset collection. It also allows for custom traffic proxy and the ability to specify the output result path.
 
 ![image-20230730114043749](/images/1.png)
 
@@ -49,15 +51,15 @@ example:
 
 
 
-## 使用
+## 🛫 Usage
 
-> 说明
+> explanation
 
-目前输出文件默认保存在 `results` 目录下，现支持`txt`、`xlsx` 格式，指纹识别输出信息显示顺序 `| 已匹配到的指纹 | 网站标题 | 网站所用的技术栈`
+Currently, the output file is saved by default in the `results` directory and supports `txt` and `xlsx` formats. The output information for fingerprint recognition is displayed in the following order: `| Matched fingerprints | Website Title | Technology Stack used by the website`.
 
 
 
-> 安装依赖
+> install dependencies
 
 ```
 pip3 install -r requirements.txt
@@ -65,43 +67,43 @@ pip3 install -r requirements.txt
 
 
 
-> 具体使用指令
+> specific usage instructions
 
 ```python
-# 单目标指纹识别
+# Single target fingerprint recognition
 python3 chunsou.py -u http://example.com
 
-# 多目标指纹识别
+# Multiple targets fingerprint recognition
 python3 chunsou.py -f urls.txt
 
-# 单目标子域名爆破(目前调用 oneforall 进行子域名爆破)
+# Single target subdomain blasting (currently using oneforall for subdomain blasting)
 python3 chunsou.py -du example.com
 
-# 多目标子域名爆破
+# Multiple targets subdomain blasting
 python3 chunsou.py -df domains.txt
 
-# 调用 fofa api 进行资产收集,需要在 /modules/config/config.ini 进行 fofa api 配置
+# Chunsou supports using the FOFA API for asset collection. To use this feature, you need to configure your FOFA API credentials in the /modules/config/config.ini file by adding the following lines:
 python3 chunsou.py -fo domain="example.com"
 
-# 指定线程（默认50）
+# Specifying the number of threads
 python3 chunsou.py -u http://example.com -t 100
 
-# 指定输出结果格式（txt、xlsx）
+# Specifying the output file format (txt、xlsx)
 python3 chunsou.py -f urls.txt -o result.xlsx
 
-# 代理流量（http、https、socks5）
+# Using a proxy for traffic（http、https、socks5）
 python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 ```
 
 
 
-## 指纹
+## 🪐 Fingerprint
 
-![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E6%9D%A5%E6%BA%90-orange?logo=adminer)![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E8%A7%84%E5%88%99-blue?logo=hyperledger)
+![Static Badge](https://img.shields.io/badge/fingerprint%20sources-orange?logo=adminer)![Static Badge](https://img.shields.io/badge/fingerprint%20rules-blue?logo=hyperledger)
 
-部分指纹来源于优秀开源项目 [Ehole](https://github.com/EdgeSecurityTeam/EHole) 、 [dismap](https://github.com/zhzyker/dismap)、 以及部分自收集，目前指纹规则条数约 10000+ (指纹条数，非程序个数)
+The fingerprint rules of the tool are partially sourced from excellent open-source projects such as [Ehole](https://github.com/EdgeSecurityTeam/EHole) and [dismap](https://github.com/zhzyker/dismap), as well as some self-collected rules. Currently, there are about 10,000+ fingerprint rules (number of rules, not the number of programs).
 
-指纹规则，目前支持`网站关键字`、`网站 title`、`网站 header`、`网站 ico hash` 四种指纹匹配方式，相应规则如下：
+The fingerprint rules currently support four matching methods: `website keywords`, `website title`, `website header`, and `website ico hash`. The corresponding rules are as follows:
 
 ```json
 {
@@ -129,12 +131,9 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 
 
 
-## FQA
+## 🛎️ FQA
 
 ```
-1、后续加强对现有指纹的适配以及不定期更新自收集的指纹
-2、bug反馈：https://github.com/Funsiooo/chunsou/issues
+1、the tool will continue to strengthen the adaptation to existing fingerprints and update the self-collected fingerprints 	    periodically to ensure the accuracy and effectiveness of the fingerprinting feature.
+2、bug feedback：https://github.com/Funsiooo/chunsou/issues
 ```
-
-
-
