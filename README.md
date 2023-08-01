@@ -2,7 +2,7 @@
 
 
 
-## 简介
+## 📖 简介
 
 ![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou(%E6%98%A5%E8%92%90)-bottlegreen?logo=github) ![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?logo=github) ![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?logo=github)
 
@@ -10,7 +10,7 @@ Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于�
 
 
 
-## 选项
+## 🥏 选项
 
 Chunsou（春蒐）支持多线程扫描，默认线程为50，可根据需求指定线程数；可联动oneforall进行子域名爆破；支持调用 fofa api 进行资产收集；自定义流量代理；指定输出结果路径
 
@@ -49,7 +49,7 @@ example:
 
 
 
-## 使用
+## 🛫 使用
 
 > 说明
 
@@ -95,7 +95,7 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 
 
 
-## 指纹
+## 🪐 指纹
 
 ![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E6%9D%A5%E6%BA%90-orange?logo=adminer) ![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E8%A7%84%E5%88%99-blue?logo=hyperledger)
 
@@ -129,7 +129,7 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 
 
 
-## FQA
+## 🛎️ FQA
 
 ```
 1、后续加强对现有指纹的适配以及不定期更新自收集的指纹
