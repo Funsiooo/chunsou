@@ -4,7 +4,7 @@
 
 ## 📖 Introduction
 
-![Static Badge](https://img.shields.io/badge/tool-chunsou-bottlegreen?style=query&logo=github)![Static Badge](https://img.shields.io/badge/language-python-blue?style=query&logo=github)![Static Badge](https://img.shields.io/badge/positioning-web%20fingerprint%20recognition-orange?style=query&logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/Funsiooo/chunsou?logo=github&color=%23ffb61e)
+![Static Badge](https://img.shields.io/badge/tool-chunsou-bottlegreen?style=query&logo=github) ![Static Badge](https://img.shields.io/badge/language-python-blue?style=query&logo=github) ![Static Badge](https://img.shields.io/badge/positioning-web%20fingerprint%20recognition-orange?style=query&logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/Funsiooo/chunsou?logo=github&color=%23ffb61e)
 
 Chunsou is a multi-threaded web fingerprint recognition tool written in Python, which is suitable for security testers to identify assets, converge risks, and investigate enterprise Internet assets in the early stage. It mainly focuses on web assets for fingerprint recognition, currently supporting about 10000+ fingerprint rules. In addition, the tool also provides auxiliary functions such as subdomain blasting and FOFA asset collection. The tool was developed with the aim of helping network security personnel improve the efficiency of asset identification and management, and assist them in conducting testing work.
 
@@ -99,7 +99,7 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 
 ## 🪐 Fingerprint
 
-![Static Badge](https://img.shields.io/badge/fingerprint%20sources-orange?logo=adminer)![Static Badge](https://img.shields.io/badge/fingerprint%20rules-blue?logo=hyperledger)
+![Static Badge](https://img.shields.io/badge/fingerprint%20sources-orange?logo=adminer) ![Static Badge](https://img.shields.io/badge/fingerprint%20rules-blue?logo=hyperledger)
 
 The fingerprint rules of the tool are partially sourced from excellent open-source projects such as [Ehole](https://github.com/EdgeSecurityTeam/EHole) and [dismap](https://github.com/zhzyker/dismap), as well as some self-collected rules. Currently, there are about 10,000+ fingerprint rules (number of rules, not the number of programs).
 
