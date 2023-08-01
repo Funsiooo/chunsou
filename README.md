@@ -4,7 +4,7 @@
 
 ## 📖 简介
 
-![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou(%E6%98%A5%E8%92%90)-bottlegreen?logo=github) ![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?logo=github) ![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/Funsiooo/chunsou?logo=github&color=%23ffc773)
+![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou(%E6%98%A5%E8%92%90)-bottlegreen?logo=github) ![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?logo=github) ![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/Funsiooo/chunsou?logo=github&color=%23ffb61e)
 
 
 Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
