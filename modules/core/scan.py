@@ -27,13 +27,13 @@ from modules.core.icon import get_ico_url, get_hash
 
 
 
-'''
-Single_scan
-'''
 def scan_rule(url):
     warnings.filterwarnings('ignore', category=InsecureRequestWarning)
+
     headers = User_Agent()
+
     response = requests.get(url, headers=headers, timeout=5, verify=False, proxies=proxies(), allow_redirects=False)
+
     content = response.content
     encoding = chardet.detect(content)['encoding']
 
@@ -62,6 +62,23 @@ def scan_rule(url):
         if title is None or len(title) == 0:
             title = None
 
+    elif status_code == 302:
+        redirected_url = response.url
+        redirected_response = requests.get(redirected_url, headers=headers, verify=False, timeout=5)
+    
+        if redirected_response.status_code == 200:
+            soup = BeautifulSoup(redirected_response.content, 'html.parser')
+            page_title = soup.find('title')
+    
+            try:
+                title = page_title.get_text().strip()
+            except Exception as e:
+                title = None
+    
+            status_code = status_code
+    
+            if title is None or len(title) == 0:
+                title = None
 
     else:
         status_code = status_code
@@ -72,6 +89,7 @@ def scan_rule(url):
     ico_content = requests.get(url=get_ico_url(url), headers=headers, timeout=5, verify=False).content
     ico_hash = get_hash(ico_content)
 
+
     with open('modules/config/finger.json', 'r', encoding='utf-8') as file:
         fingerprint = json.load(file)
 
@@ -81,7 +99,6 @@ def scan_rule(url):
             method = fingerprints['method']
             location = fingerprints['location']
             keywords = fingerprints['keyword']
-
 
             if html_body is not None:
                 if method == 'keyword' and location == 'body':
@@ -109,12 +126,13 @@ def scan_rule(url):
     except Exception as e:
         print(f"[-] Error occurred during URL identification,Check whether the network is normal: {str(e)}")
 
-# 主要执行的代码
 def single_main():
     args = argument()
     url = args.url
     out_file = output_dir()
+
     excle_results = []
+
     script_start()
 
     try:
@@ -224,6 +242,10 @@ def single_main():
 
     except Exception as e:
         pass
+        # 捕获到异常的报错信息
+        # print(f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.RED}[-]{Colors.RESET}{Colors.BROWN} "
+        #        f"[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET} {Colors.RED} [Error occurred, Check whether the network and target link are entered correctly. If the link is redirected, identify the redirected link again]{Colors.RESET}")
+        # print(f"[-] Error occurred during URL identification,Check whether the network is normal: {str(e)}")
 
 
 def lists_filename(file):
@@ -242,7 +264,7 @@ def lists_main(file):
 
         script_start()
 
-        lock = threading.Lock()
+        lock = threading.Lock()  # 创建一个锁来确保线程安全
 
         if out_file.endswith(".txt"):
             with open(out_file, 'w') as file:
@@ -278,16 +300,13 @@ def lists_main(file):
                                          f" | {Colors.ORANGE}{detected_cms}{Colors.RESET} | {Colors.ORANGE}{title}" \
                                          f"{Colors.RESET} | {Colors.ORANGE}{final_key}{Colors.RESET}"
 
-
                                 write_result = f"[+] [{status_code}] {url} | {detected_cms} | {title} | {final_key}"
                             else:
                                 result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
                                          f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET} " \
                                          f"| {Colors.ORANGE}None{Colors.RESET} | {Colors.ORANGE}{title}{Colors.RESET} | " \
                                          f"{Colors.ORANGE}{final_key}{Colors.RESET}"
-
                                 write_result = f"[+] [{status_code}] {url} | None | {title} | {final_key}"
-
 
                             print(result)
                             with open(out_file, 'a') as file:
@@ -300,7 +319,6 @@ def lists_main(file):
                                            f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
                             error_write_result = f"[-] [{status_code}] {url} [{str(e)}]"
-
 
                             print(error_result)
                             with open(out_file, 'a') as file:
@@ -338,7 +356,6 @@ def lists_main(file):
                     except Exception as e:
                         final_key = None
 
-
                     try:
                         detected_cms, status_code, title = scan_rule(url)
 
@@ -347,7 +364,6 @@ def lists_main(file):
                                      f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
                                      f" | {Colors.ORANGE}{detected_cms}{Colors.RESET} | {Colors.ORANGE}{title}" \
                                      f"{Colors.RESET} | {Colors.ORANGE}{final_key}{Colors.RESET}"
-
 
                             write_result = status_code, url, title, final_key, detected_cms
                             excle_results.append(write_result)
@@ -361,12 +377,12 @@ def lists_main(file):
                             write_result = status_code, url, title, final_key, detected_cms
                             excle_results.append(write_result)
 
-
                         print(result)
 
 
                     except Exception as e:
                         status_code = 404
+
                         whoami = ' '
                         iamhahaha = ' '
 

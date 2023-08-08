@@ -13,9 +13,6 @@ import os
 from modules.core.args import argument
 
 
-'''
-single_subdomains
-'''
 def oneforall():
     script_path = 'modules/plugins/OneForAll/oneforall.py'
     return script_path
@@ -23,16 +20,19 @@ def oneforall():
 
 def single_output_file_csv():
     script_dir = os.path.dirname(os.path.abspath(__file__))
+
     save_dir = 'results'
+
     parent_dir = os.path.dirname(script_dir)
     save_path = os.path.join(parent_dir, os.path.pardir, save_dir, 'subdomains.csv')
     return save_path
 
 
-# 处理将结果保存为txt
 def single_output_file_txt():
     script_dir = os.path.dirname(os.path.abspath(__file__))
+
     save_dir = 'results'
+
     parent_dir = os.path.dirname(script_dir)
     save_path = os.path.join(parent_dir, os.path.pardir, save_dir, 'subdomains.txt')
     return save_path
@@ -67,9 +67,7 @@ def subdomain_single():
     single_csv_to_txt()
 
 
-'''
-List_subdomains
-'''
+
 def lists_output_file_csv():
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -88,16 +86,18 @@ def lists_extract_column(lists_csv_file, lists_column_index, lists_output_file):
 
     with open(lists_output_file, 'w') as file:
         for item in column_data:
-            # 添加 “http://” 和 “https://”
             http_item = 'http://' + item
             https_item = 'https://' + item
+
             file.write(http_item + '\n')
             file.write(https_item + '\n')
 
 
 def lists_output_file_txt():
     script_dir = os.path.dirname(os.path.abspath(__file__))
+
     save_dir = 'results'
+
     parent_dir = os.path.dirname(script_dir)
     save_path = os.path.join(parent_dir, os.path.pardir, save_dir, 'subdomains.txt')
     return save_path

@@ -7,7 +7,6 @@
 @Github  ：https://github.com/Funsiooo
 '''
 
-
 import requests
 import warnings
 from urllib3.exceptions import InsecureRequestWarning
@@ -19,7 +18,7 @@ from modules.core.color import Colors
 
 def check_version():
     try:
-        current_version = '1.2'
+        current_version = '1.3'
 
         print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
               f"]{Colors.RESET} {Colors.GREEN}checking for the latest version{Colors.RESET}")

@@ -14,6 +14,8 @@ from modules.api.fofa import fofa_main
 from modules.core.scan import lists_main,single_main
 from modules.core.color import Colors
 from modules.core.time import print_start_time
+from modules.api.hunter import hunter_main
+from modules.core.tip import tip_main
 from modules.core.check import check_version
 
 def main():
@@ -35,10 +37,18 @@ def main():
         if args.fofa:
             fofa_main()
 
+        if args.hunter:
+            hunter_main()
+
+        if args.tip:
+            tip_main()
+
+
 
     except Exception as e:
         print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}{Colors.RED}[-] Error occurred , Check whether the "
               f"network, command, or configuration is correct.")
+
 
 
 if __name__ == '__main__':

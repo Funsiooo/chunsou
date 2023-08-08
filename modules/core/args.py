@@ -7,7 +7,6 @@
 @Github  ：https://github.com/Funsiooo
 '''
 
-
 import argparse
 
 def argument():
@@ -22,6 +21,8 @@ def argument():
 
     api = parser.add_argument_group("api")
     api.add_argument('-fo', '--fofa', metavar='', help='call the fofa api for asset collection')
+    api.add_argument('-hu', '--hunter', metavar='', help='call the hunter api for asset collection')
+    api.add_argument('-tip', action='store_true', help='spatial mapping search syntax reference')
 
     others = parser.add_argument_group("others")
     others.add_argument('-p', '--proxy', metavar='', help='proxy scan traffic')
@@ -37,6 +38,8 @@ def argument():
                                                     "-o  , --output        python3 chunsou.py -f -o results.xlsx\n  "        
                                                     "-du , --domain        python3 chunsou.py -du example.com\n  "
                                                     "-df , --domains       python3 chunsou.py -df domains.txt\n  "
-                                                    "-fo , --fofa          python3 chunsou.py -fo domain=\"example.com\""  )
+                                                    "-fo , --fofa          python3 chunsou.py -fo domain=\"example.com\"\n  "
+                                                    "-hu , --hunter        python3 chunsou.py -hu domain=\"example.com\"\n  "
+                                                    "-tip,                 python3 chunsou.py -tip"  )
 
     return parser.parse_args()

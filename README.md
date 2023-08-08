@@ -1,4 +1,4 @@
-![chunsou](images/logo.png)
+![chunsou](E:\Security file\learning notes\images\logo-16915083540681.png)
 
 
 
@@ -6,8 +6,7 @@
 
 ![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou(%E6%98%A5%E8%92%90)-bottlegreen?logo=github) ![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?logo=github) ![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/Funsiooo/chunsou?logo=github&color=%23ffb61e)
 
-
-Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
+Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA、Hunter资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
 
 [\[English Readme\]](https://github.com/Funsiooo/chunsou/tree/main/doc/Readme.md)
 
@@ -17,7 +16,7 @@ Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于�
 
 Chunsou（春蒐）支持多线程扫描，默认线程为50，可根据需求指定线程数；可联动oneforall进行子域名爆破；支持调用 fofa api 进行资产收集；自定义流量代理；指定输出结果路径
 
-![image-20230730114043749](/images/1.png)
+![image-20230730114043749](./images/1.png)
 
 ```
 usage: python3 chunsou.py [options]
@@ -32,6 +31,8 @@ subdomain:
 
 api:
   -fo , --fofa          call the fofa api for asset collection
+  -hu , --hunter        call the hunter api for asset collection
+  -tip                  spatial mapping search syntax reference
 
 others:
   -p , --proxy          proxy scan traffic
@@ -44,10 +45,12 @@ example:
   -f , --file           python3 chunsou.py -f urls.txt
   -p  , --proxy         python3 chunsou.py -u http://example.com -p http://127.0.0.1
   -t  , --threads       python3 chunsou.py -f urls.txt -t 100
-  -o  , --output        python3 chunsou.py -f -o results.txt
+  -o  , --output        python3 chunsou.py -f -o results.xlsx
   -du , --domain        python3 chunsou.py -du example.com
   -df , --domains       python3 chunsou.py -df domains.txt
   -fo , --fofa          python3 chunsou.py -fo domain="example.com"
+  -hu , --hunter        python3 chunsou.py -hu domain="example.com"
+  -tip,                 python3 chunsou.py -tip
 ```
 
 
@@ -83,8 +86,14 @@ python3 chunsou.py -du example.com
 # 多目标子域名爆破
 python3 chunsou.py -df domains.txt
 
-# 调用 fofa api 进行资产收集,需要在 /modules/config/config.ini 进行 fofa api 配置
+# 调用 fofa api 进行资产收集,需要在 /modules/config/config.ini 进行 fofa api key 配置
 python3 chunsou.py -fo domain="example.com"
+
+# 调用 hunter api 进行资产收集,需要在 /modules/config/config.ini 进行 hunter api key 配置
+python3 chunsou.py -hunter domain="example.com"
+
+# 输出显示 fofa hunter 基本搜索语法
+python3 chunsou.py -tip
 
 # 指定线程（默认50）
 python3 chunsou.py -u http://example.com -t 100
@@ -137,7 +146,5 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 ```
 1、后续加强对现有指纹的适配以及不定期更新自收集的指纹
 2、bug反馈：https://github.com/Funsiooo/chunsou/issues
+3、使用时注意网络问题，由于部分网站防火墙或其他策略原因使用科学网络或网络不稳定会导致部分扫描报错异常
 ```
-
-
-
