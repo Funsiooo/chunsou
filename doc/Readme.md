@@ -1,4 +1,4 @@
-![chunsou](./images/logo.png)
+![chunsou](../images/logo.png)
 
 
 
