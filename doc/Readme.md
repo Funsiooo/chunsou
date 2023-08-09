@@ -85,6 +85,9 @@ python3 chunsou.py -df domains.txt
 # Chunsou supports using the FOFA API for asset collection. To use this feature, you need to configure your FOFA API credentials in the /modules/config/config.ini file by adding the following lines:
 python3 chunsou.py -fo domain="example.com"
 
+# Chunsou supports using the Hunter API for asset collection. To use this feature, you need to configure your Hunter API credentials in the /modules/config/config.ini file by adding the following lines:
+python3 chunsou.py -hu domain="example.com"
+
 # Specifying the number of threads
 python3 chunsou.py -u http://example.com -t 100
 
