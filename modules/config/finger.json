@@ -5,10 +5,150 @@
         "location": "body",
         "keyword": ["/seeyon/USER-DATA/IMAGES/LOGIN/login.gif"]
     }, {
+        "cms": "汉塔科技上网行为流量管理系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["428165606"]
+    }, {
+        "cms": "汉塔科技上网行为流量管理系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["汉塔科技 - 上网行为管理系统"]
+    }, {
+        "cms": "信呼协同办公系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["信呼协同办公系统"]
+    }, {
+        "cms": "信呼协同办公系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["1652488516"]
+    }, {
+        "cms": "联软IT安全运维管理系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["2163986542"]
+    }, {
+        "cms": "帕拉迪Core4A-UTM",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["3928629595"]
+    }, {
+        "cms": "帕拉迪Core4A-UTM",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["帕拉迪Core4A-UTM"]
+    }, {
+        "cms": "中新金盾安全管理与运维审计系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/fort_新版UI主线版本/WebRoot/pages/commons/meta.jsp"]
+    }, {
+        "cms": "LiveBOS Manager管理控制平台",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["3877875895"]
+    }, {
+        "cms": "LiveBOS Manager管理控制平台",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["LiveBOS控制台"]
+    }, {
+        "cms": "契约锁电子签章系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["738823048"]
+    }, {
+        "cms": "契约锁电子签章系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["2187084310"]
+    }, {
+        "cms": "普元EOS",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["1204326113"]
+    }, {
+        "cms": "来客推商城系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["来客推商城"]
+    }, {
+        "cms": "来客推商城系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["来客推商城系统"]
+    }, {
+        "cms": "来客推商城系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["1433892035"]
+    }, {
+        "cms": "协同办公文档 (DzzOfffice)",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["2333230404"]
+    }, {
+        "cms": "辰信景云终端安全管理系统-SaaS版",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["辰信景云终端安全管理系统-SaaS版"]
+    }, {
+        "cms": "辰信景云终端安全管理系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["辰信景云终端安全管理系统7.0"]
+    }, {
+        "cms": "汉得SRM",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["汉得SRM云平台"]
+    }, {
+        "cms": "广联达 Linkworks 办公OA",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["4005832539"]
+    }, {
+        "cms": "广联达 Linkworks 办公OA",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/Services/Identification/"]
+    }, {
+        "cms": "1Panel 服务器运维管理面板",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["1965287190"]
+    }, {
+        "cms": "用友-移动系统管理",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["<span></span>移动系统管理","img/login.png","../js/appActionLogCtr.js"]
+    }, {
+        "cms": "Milesight VPN",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["MilesightVPN"]
+    }, {
+        "cms": "Milesight VPN",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["612420834"]
+    }, {
         "cms": "悦泰节能 智能数据网关",
         "method": "keyword",
         "location": "body",
         "keyword": ["/FWlib3/resources/css/xtheme-gray.cssz"]
+    }, {
+        "cms": "PigCms",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/index.php?m=Index&a=verifyLogin"]
+    }, {
+        "cms": "PigCms",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/tpl/Home/pigcms/common/css/public.css"]
     }, {
         "cms": "惠尔顿 e地通Socks5 VPN登录系统",
         "method": "keyword",
@@ -4010,11 +4150,6 @@
         "location": "body",
         "keyword": ["5471989"]
     }, {
-        "cms": "ThinkPHP",
-        "method": "keyword",
-        "location": "header",
-        "keyword": ["ThinkPHP"]
-    }, {
         "cms": "SuperMap iServer Web Manager",
         "method": "icon_hash",
         "location": "body",
@@ -4259,11 +4394,6 @@
         "method": "keyword",
         "location": "body",
         "keyword": ["WIFISKY","adminusr","深圳市领空技术"]
-     }, {
-        "cms": "后台",
-        "method": "keyword",
-        "location": "title",
-        "keyword": ["后台"]
      }, {
         "cms": "MinIO",
         "method": "keyword",
@@ -4549,11 +4679,6 @@
         "method": "keyword",
         "location": "title",
         "keyword": ["Minio Browser"]
-     }, {
-        "cms": "管理后台登录",
-        "method": "keyword",
-        "location": "title",
-        "keyword": ["管理员","登录"]
      }, {
         "cms": "360天擎",
         "method": "keyword",
@@ -5931,15 +6056,15 @@
         "location": "header",
         "keyword": ["realm=\"adtran mx408e"]
     }, {
-        "cms": "ADT-SJW74-VPN",
+        "cms": "安达通-SJW74-VPN",
         "method": "keyword",
         "location": "body",
         "keyword": ["src=\"./system/usbkey.js\""]
     }, {
-        "cms": "ADT-TPN-2G",
+        "cms": "安达通-TPN-2G",
         "method": "keyword",
-        "location": "body",
-        "keyword": ["src=\"./system/usbkey.js\""]
+        "location": "title",
+        "keyword": ["TPN-2G网关控制台管理员登录"]
     }, {
         "cms": "ADVA-FSP",
         "method": "keyword",
@@ -16736,10 +16861,10 @@
         "location": "header",
         "keyword": ["realm=\"lotus notes traveler"]
     }, {
-        "cms": "LotWan-Web-accelerator",
+        "cms": "LotWan 广域网优化系统",
         "method": "keyword",
         "location": "body",
-        "keyword": ["北京华夏创新科技有限公司"]
+        "keyword": ["北京华夏创新科技有限公司","Copyright"]
     }, {
         "cms": "loyaa-Information-Automatic-Editing-system",
         "method": "keyword",
@@ -18985,11 +19110,6 @@
         "method": "keyword",
         "location": "body",
         "keyword": ["href=\"mailto:otrs@bearingpoint.com", "src=\"/otrs-web/images/"]
-    }, {
-        "cms": "OpenSSL",
-        "method": "keyword",
-        "location": "header",
-        "keyword": ["openssl"]
     }, {
         "cms": "OpenStage-IP-Phone",
         "method": "keyword",
@@ -24716,11 +24836,6 @@
         "location": "body",
         "keyword": ["<a href=\"#!/home\" class=\"sysname\">360网神数据脱敏系统 "]
     }, {
-        "cms": "Wangsu",
-        "method": "keyword",
-        "location": "header",
-        "keyword": ["cdn cache server", "ws cdn server"]
-    }, {
         "cms": "wantit-ERP",
         "method": "keyword",
         "location": "body",
@@ -27081,11 +27196,6 @@
         "location": "header",
         "keyword": ["Server: Tengine"]
     }, {
-        "cms": "ThinkPHP",
-        "method": "keyword",
-        "location": "header",
-        "keyword": ["thinkphp", "think_template"]
-    }, {
         "cms": "Weaver-OA",
         "method": "keyword",
         "location": "header",
@@ -27425,11 +27535,6 @@
             "method": "keyword",
             "location": "body",
             "keyword": ["<div id=\"ClickTaleDiv"]
-        }, {
-            "cms": "ThinkPHP",
-            "method": "keyword",
-            "location": "body",
-            "keyword": ["ThinkPHP"]
         }, {
             "cms": "ColdFusion",
             "method": "keyword",
@@ -35602,16 +35707,6 @@
             "location": "header",
             "keyword": ["PIWIK_SESSID"]
         }, {
-            "cms": "ThinkPHP",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["thinkphp"]
-        }, {
-            "cms": "ThinkPHP",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["think_template"]
-        }, {
             "cms": "Swiftlet",
             "method": "keyword",
             "location": "header",
@@ -35901,11 +35996,6 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["X-Unbounce-Pageid"]
-        }, {
-            "cms": "OpenSSL",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["OpenSSL"]
         }, {
             "cms": "SMA_Sunny_Webbox",
             "method": "keyword",
@@ -36376,11 +36466,6 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["Hybrid Cluster"]
-        }, {
-            "cms": "HttpOnly",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["httponly"]
         }, {
             "cms": "Indico",
             "method": "keyword",
@@ -37022,16 +37107,6 @@
             "location": "header",
             "keyword": ["Powered-By-ChinaCache"]
         }, {
-            "cms": "网宿",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["Cdn Cache Server"]
-        }, {
-            "cms": "网宿",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["WS CDN Server"]
-        }, {
             "cms": "帝联",
             "method": "keyword",
             "location": "header",
@@ -37406,11 +37481,6 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["CERN"]
-        }, {
-            "cms": "CDN-Cache-Server",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["Cdn Cache Server"]
         }, {
             "cms": "Caudium",
             "method": "keyword",
@@ -53117,16 +53187,6 @@
             "location": "header",
             "keyword": ["atlassian.xsrf.token"]
         }, {
-            "cms": "网宿CDN",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["Cdn Cache Server"]
-        }, {
-            "cms": "网宿CDN",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["WS CDN Server"]
-        }, {
             "cms": "帝联CDN",
             "method": "keyword",
             "location": "header",
@@ -53431,11 +53491,6 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["Fnord httpd"]
-        }, {
-            "cms": "Cdn Cache",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["Cdn Cache"]
         }, {
             "cms": "aiohttp",
             "method": "keyword",
