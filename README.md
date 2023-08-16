@@ -148,4 +148,5 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 2、bug反馈：https://github.com/Funsiooo/chunsou/issues
 3、使用时注意网络问题，由于部分网站防火墙或其他策略原因使用科学网络或网络不稳定会导致部分扫描报错异常
 4、工具更新详情可查看log.md
+5、指纹不定期更新，最新指纹请下载 modules/config/finger.json 文件自行替换
 ```
