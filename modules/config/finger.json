@@ -5,6 +5,86 @@
         "location": "body",
         "keyword": ["/seeyon/USER-DATA/IMAGES/LOGIN/login.gif"]
     }, {
+        "cms": "ZKTeco 系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["Copyright ©","ZKTECO CO.,LTD.All rights reserved."]
+    }, {
+        "cms": "科荣 AIO 管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["请下载<a href=\"/common/AIOPrint.exe\"","科荣控件"]
+    }, {
+        "cms": "科荣 AIO 管理系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["3656675207"]
+    }, {
+        "cms": "企望制造 ERP系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["上海企望信息科技  技术支持"]
+    }, {
+        "cms": "企望制造 ERP系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["企望制造ERP系统"]
+    }, {
+        "cms": "企业微信-私有版服务端",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/wework_admin/static/style/images/independent/mulit_logo/WeworkLogoBule_2x$b672f477.png"]
+    }, {
+        "cms": "企业微信-私有版服务端",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["807961549"]
+    }, {
+        "cms": "企业微信-私有版服务端",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["3588968498"]
+    }, {
+        "cms": "飞企互联 FE业务协作平台",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["3903390150"]
+    }, {
+        "cms": "飞企互联 FE业务协作平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["flyrise.stopBackspace.js"]
+    }, {
+        "cms": "新开普 前置服务管理平台",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["3016838938"]
+    }, {
+        "cms": "新开普 前置服务管理平台",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["掌上校园服务管理平台"]
+    }, {
+        "cms": "OfficeWeb365",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["9999-9999-51A8-719E-C8B2-558D-11E9","机器码："]
+    }, {
+        "cms": "OfficeWeb365",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["请输入furl参数"]
+    }, {
+        "cms": "锐捷 BCR商业无线云网关",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["<img src=\"/luci-static/ruijie/imgs/ruijlogo.jpg\""]
+    }, {
+        "cms": "启明星辰 4A统一安全管控平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["cas/css/ace-part2.min.css"]
+    }, {
         "cms": "汉塔科技上网行为流量管理系统",
         "method": "icon_hash",
         "location": "body",
@@ -1115,10 +1195,10 @@
         "location": "body",
         "keyword": ["Swagger UI"]
     }, {
-        "cms": "Ruijie",
-        "method": "keyword",
+        "cms": "Ruijie 设备",
+        "method": "icon_hash",
         "location": "body",
-        "keyword": ["4008 111 000"]
+        "keyword": ["3602019745"]
     }, {
         "cms": "Huawei SMC",
         "method": "keyword",
