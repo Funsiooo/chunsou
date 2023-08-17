@@ -29,6 +29,7 @@ def argument():
     others.add_argument('-t', '--threads', metavar='', help='specify the number of scanning threads, default 50')
     others.add_argument('-h', '--help', action="help", help="show this help message and exit")
     others.add_argument('-o', '--output',metavar='', help='specified output file')
+    others.add_argument('-e', action='store_true', help='displays the specific error cause that cannot be identified by multi-object scanning')
 
     example = parser.add_argument_group("example")
     example.add_argument(action='store_false', dest="-u , --url            python3 chunsou.py -u http://example.com\n  "
@@ -40,6 +41,7 @@ def argument():
                                                     "-df , --domains       python3 chunsou.py -df domains.txt\n  "
                                                     "-fo , --fofa          python3 chunsou.py -fo domain=\"example.com\"\n  "
                                                     "-hu , --hunter        python3 chunsou.py -hu domain=\"example.com\"\n  "
+                                                    "-e ,                  python3 chunsou.py -f urls.txt -e\n  "
                                                     "-tip,                 python3 chunsou.py -tip"  )
 
     return parser.parse_args()
