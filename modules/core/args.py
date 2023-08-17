@@ -41,7 +41,7 @@ def argument():
                                                     "-df , --domains       python3 chunsou.py -df domains.txt\n  "
                                                     "-fo , --fofa          python3 chunsou.py -fo domain=\"example.com\"\n  "
                                                     "-hu , --hunter        python3 chunsou.py -hu domain=\"example.com\"\n  "
-                                                    "-e ,                  python3 chunsou.py -f urls.txt -e\n  "
+                                                    "-e  ,                 python3 chunsou.py -f urls.txt -e\n  "
                                                     "-tip,                 python3 chunsou.py -tip"  )
 
     return parser.parse_args()
