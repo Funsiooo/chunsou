@@ -249,13 +249,26 @@ def single_main():
 
 
 def lists_filename(file):
+    urls = []
+    
     with open(file, 'r', encoding='utf-8') as file:
-        urls = [line.strip() for line in file]
+        target = [line.strip() for line in file]
+
+        for url in target:
+            if not url.startswith(('http://', 'https://')):
+                url_http = 'http://' + url
+                url_https = 'https://' + url
+                urls.append(url_http)
+                urls.append(url_https)
+            else:
+                urls.append(url)
+
     return urls
 
 
 def lists_main(file):
     excle_results = []
+    args = argument()
 
     try:
         urls = lists_filename(file)
@@ -320,9 +333,10 @@ def lists_main(file):
 
                             error_write_result = f"[-] [{status_code}] {url} [{str(e)}]"
 
-                            print(error_result)
-                            with open(out_file, 'a') as file:
-                                file.write(error_write_result + '\n')
+                            if args.e:
+                                print(error_result)
+                                with open(out_file, 'a') as file:
+                                    file.write(error_write_result + '\n')
 
 
             with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads()) as executor_threads:
@@ -377,6 +391,7 @@ def lists_main(file):
                             write_result = status_code, url, title, final_key, detected_cms
                             excle_results.append(write_result)
 
+                        
                         print(result)
 
 
@@ -390,10 +405,12 @@ def lists_main(file):
                                        f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
                                        f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
-                        write_result = status_code, url, whoami, iamhahaha, str(e)
-                        excle_results.append(write_result)
+                        if args.e:
+                            write_result = status_code, url, whoami, iamhahaha, str(e)
+                            excle_results.append(write_result)
 
-                    print(error_result)
+                    if args.e:
+                        print(error_result)
 
             with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads()) as executor_threads:
                 futures = [executor_threads.submit(scan_url, url) for url in urls]
