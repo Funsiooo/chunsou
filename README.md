@@ -51,6 +51,7 @@ example:
   -fo , --fofa          python3 chunsou.py -fo domain="example.com"
   -hu , --hunter        python3 chunsou.py -hu domain="example.com"
   -tip,                 python3 chunsou.py -tip
+  -e  ,                 python3 chunsou.py -f urls.txt -e
 ```
 
 
@@ -77,7 +78,7 @@ pip3 install -r requirements.txt
 # 单目标指纹识别
 python3 chunsou.py -u http://example.com
 
-# 多目标指纹识别
+# 多目标指纹识别（默认只输出成功请求的结果，报错url不显示，若需要显示报错信息加上 -e ）
 python3 chunsou.py -f urls.txt
 
 # 单目标子域名爆破(目前调用 oneforall 进行子域名爆破)
@@ -103,6 +104,7 @@ python3 chunsou.py -f urls.txt -o result.xlsx
 
 # 代理流量（http、https、socks5）
 python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
+
 ```
 
 
