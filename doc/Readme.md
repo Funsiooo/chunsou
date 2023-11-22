@@ -1,12 +1,8 @@
-![chunsou](../images/logo.png)
-
-
-
 ## 📖 Introduction
 
 ![Static Badge](https://img.shields.io/badge/tool-chunsou-bottlegreen?style=query&logo=github) ![Static Badge](https://img.shields.io/badge/language-python-blue?style=query&logo=github) ![Static Badge](https://img.shields.io/badge/positioning-web%20fingerprint%20recognition-orange?style=query&logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/Funsiooo/chunsou?logo=github&color=%23ffb61e)
 
-Chunsou is a multi-threaded web fingerprint recognition tool written in Python, which is suitable for security testers to identify assets, converge risks, and investigate enterprise Internet assets in the early stage. It mainly focuses on web assets for fingerprint recognition, currently supporting about 10000+ fingerprint rules. In addition, the tool also provides auxiliary functions such as subdomain blasting and FOFA and Hunter asset collection. The tool was developed with the aim of helping network security personnel improve the efficiency of asset identification and management, and assist them in conducting testing work.
+Chunsou is a multi-threaded web fingerprint recognition tool written in Python, which is suitable for security testers to identify assets, converge risks, and investigate enterprise Internet assets in the early stage. It mainly focuses on web assets for fingerprint recognition, currently supporting about 10000+ fingerprint rules. In addition, the tool also provides auxiliary functions such as subdomain blasting and Fofa and Hunter asset collection. The tool was developed with the aim of helping network security personnel improve the efficiency of asset identification and management, and assist them in conducting testing work.
 
 
 
@@ -16,7 +12,7 @@ Chunsou is a multi-threaded web fingerprint recognition tool written in Python, 
 
 Chunsou is capable of multi-threaded scanning with the default number of threads set to 50, which can be specified according to the user's requirements. It can be linked with oneforall for subdomain blasting and supports calling the fofa API for asset collection. It also allows for custom traffic proxy and the ability to specify the output result path.
 
-![image-20230730114043749](/images/1.png)
+![image-20230730114043749](../images/1.png)
 
 ```
 usage: python3 chunsou.py [options]
@@ -150,3 +146,9 @@ The fingerprint rules currently support four matching methods: `website keywords
 4、 tool update details can be seen in log.md
 5、 the fingerprint is not updated regularly, fingerprint please download the latest modules/config/finger. The json file to replac
 ```
+
+
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Funsiooo/chunsou&type=Date)](https://star-history.com/#Funsiooo/chunsou&Date)

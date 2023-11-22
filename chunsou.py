@@ -50,7 +50,6 @@ def main():
               f"network, command, or configuration is correct.")
 
 
-
 if __name__ == '__main__':
     banner_2()
     main()

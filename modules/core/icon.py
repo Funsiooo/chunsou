@@ -9,7 +9,6 @@ import warnings
 from urllib3.exceptions import InsecureRequestWarning
 from modules.core.agent import User_Agent
 
-
 def get_hash(content):
     def mmh3_hash32(raw_bytes, is_uint32=True):
         h32 = mmh3.hash(raw_bytes)
@@ -30,8 +29,6 @@ def get_hash(content):
         return bytes(buffer)
 
     return mmh3_hash32(stand_base64(content))
-
-
 
 def get_ico_url(url):
     warnings.filterwarnings('ignore', category=InsecureRequestWarning)

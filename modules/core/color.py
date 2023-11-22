@@ -6,19 +6,18 @@
 @Author  ：Funsiooo
 @Github  ：https://github.com/Funsiooo
 '''
-
-
 import os
 os.system('')
 
-
 class Colors:
-    CYAN = '\033[38;5;67m'  # 时间
-    GREEN = '\033[01;32m'   # [+]
-    RED = '\033[01;31m' # [-]
-    BROWN = '\033[01;38;2;173;126;78m' # 响应码
-    WHITE = '\033[01;37m'  # url
-    YELLOW = '\033[01;38;2;242;235;217m'# url
-    ORANGE = '\033[38;2;252;166;82m' # 结果
-    #ORANGE = '\033[38;2;200;155;64m' #c19c00
+    CYAN = '\033[38;5;67m'
+    GREEN = '\033[01;32m'
+    RED = '\033[01;31m'
+    BROWN = '\033[01;38;2;252;166;82m'
+    WHITE = '\033[01;38;5;252m'
+    YELLOW = '\033[01;38;5;252m'
+    BLUE = '\033[38;5;251;0.4m'
+    PURPLE = '\033[38;5;251;0.4m'
+    PALEYELLOW = '\033[38;5;251;0.4m'
+    ORANGE = '\033[01;38;2;252;166;82m'
     RESET = '\033[0m'

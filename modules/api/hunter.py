@@ -123,7 +123,6 @@ def create_component(name, version):
 
 
 def hunter_main():
-    # 引入 argument() 函数实现参数化输入
     args = argument()
 
     # 执行脚本开始提示语

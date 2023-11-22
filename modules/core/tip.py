@@ -10,8 +10,6 @@
 
 from tabulate import tabulate
 from modules.core.output import tip_start
-
-
 def tips():
     fofa_table_data = [
         ["例句", "用途说明", "注"],
@@ -125,9 +123,18 @@ def tips():
         ["web.is_vul=true", "查询存在历史漏洞的资产"]
     ]
 
+    # 生成表格
+    # table = tabulate(table_data, headers="firstrow", tablefmt="plain")
+
+    # table_pipe = tabulate(table_data, headers="firstrow", tablefmt="pipe")
+
     fofa_table_orgtbl = tabulate(fofa_table_data, headers="firstrow", tablefmt="orgtbl")
     hunter_table_orgtbl = tabulate(hunter_table_data, headers="firstrow", tablefmt="orgtbl")
-    
+
+    # # 自定义表格样式（调整字体颜色和样式）
+    # table = colored(table, "cyan", attrs=["bold"])
+    # table_plain = tabulate(table_data, headers="firstrow", tablefmt="plain")
+
     print('''
  ______     __                                _                                                      
 |  ____|   / _|                              | |                                                     

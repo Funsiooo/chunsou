@@ -7,40 +7,36 @@
 @Github  ：https://github.com/Funsiooo
 '''
 
-
 from modules.core.time import print_start_time,current_time
 from modules.core.color import Colors
 from modules.core.args import argument
+
+
 import csv
 from openpyxl import Workbook
 import os
 from openpyxl.styles import Font, PatternFill, Border, Side
 from modules.core.check import check_version
 
-
 def script_start():
-    # 脚本启动时输出
-    # 检查程序版本
     check_version()
-    print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-          f"]{Colors.RESET} {Colors.GREEN}fingerprint recognition result order | Website fingerprint | Web title | "
+    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+          f"{Colors.RESET}] {Colors.GREEN}fingerprint recognition result order | Website fingerprint | Web title | "
           f"Web stack{Colors.RESET}")
     # print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
     #       f"]{Colors.RESET} {Colors.GREEN}the program starts running, and the following are the fingerprint recognition results{Colors.RESET}")
 
 
+
 def script_end():
-    # 执行脚本结束提示语
-    print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-          f"]{Colors.RESET} {Colors.YELLOW}{Colors.GREEN}the script has finished "
-          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.BROWN}{output_dir()}{Colors.RESET}"
+    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+          f"{Colors.RESET}] {Colors.GREEN}the script has finished "
+          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.ORANGE}{output_dir()}{Colors.RESET}"
           f" , {Colors.GREEN}scan end @ {current_time()}{Colors.RESET}")
 
-
 def tip_start():
-    # 脚本启动时输出
-    print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-          f"]{Colors.RESET} {Colors.GREEN} The basic syntax for mapping in FOFA and Hunter spaces is as follows. Please be mindful of user permissions when using it {Colors.RESET}")
+    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+          f"{Colors.RESET}] {Colors.GREEN} The basic syntax for mapping in FOFA and Hunter spaces is as follows. Please be mindful of user permissions when using it {Colors.RESET}")
     # print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
     #       f"]{Colors.RESET} {Colors.GREEN}the program starts running, and the following are the fingerprint recognition results{Colors.RESET}")
 
@@ -79,38 +75,33 @@ def hunter_output_dir():
 
 
 def fofa_start():
-    # 脚本启动时输出
-    # 检查程序版本
     check_version()
-    print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-          f"]{Colors.RESET} {Colors.GREEN}to start calling the hunter api, you need to correctly configure the api in the modules/config/config.ini file{Colors.RESET}")
+    print(f"[{Colors.CYAN}{print_start_time()}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+          f"{Colors.RESET}] {Colors.GREEN}to start calling the hunter api, you need to correctly configure the api in the modules/config/config.ini file{Colors.RESET}")
+
 
 
 def fofa_end():
-    # 执行脚本结束提示语
-    print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-          f"]{Colors.RESET} {Colors.YELLOW}{Colors.GREEN}the script has finished "
-          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.BROWN}{fofa_output_dir()}{Colors.RESET}"
+    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+          f"{Colors.RESET}] {Colors.GREEN}the script has finished "
+          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.ORANGE}{fofa_output_dir()}{Colors.RESET}"
           f" , {Colors.GREEN}scan end @ {current_time()}{Colors.RESET}")
 
-
 def hunter_start():
-    # 脚本启动时输出
-    # 检查程序版本
     check_version()
-    print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-          f"]{Colors.RESET} {Colors.GREEN}to start calling the hunter api, you need to correctly configure the api in the modules/config/config.ini file{Colors.RESET}")
+    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+          f"{Colors.RESET}] {Colors.GREEN}to start calling the hunter api, you need to correctly configure the api in the modules/config/config.ini file{Colors.RESET}")
+
 
 
 def hunter_end():
-    # 执行脚本结束提示语
-    print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-          f"]{Colors.RESET} {Colors.YELLOW}{Colors.GREEN}the script has finished "
-          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.BROWN}{hunter_output_dir()}{Colors.RESET}"
+    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+          f"{Colors.RESET}] {Colors.GREEN}the script has finished "
+          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.ORANGE}{hunter_output_dir()}{Colors.RESET}"
           f" , {Colors.GREEN}scan end @ {current_time()}{Colors.RESET}")
 
 
-# 指纹识别保存为xlsx
+
 def scan_save_to_excle(results):
     out_file = output_dir()
     csv_headers = ['状态码', '网页URL', '网页标题', '网站技术栈', '指纹结果']
@@ -123,7 +114,8 @@ def scan_save_to_excle(results):
     ws = wb.active
 
     title_font = Font(bold=True, name='宋体', size=12)
-    title_fill = PatternFill(start_color="C0C0C0", end_color="C0C0C0", fill_type="solid")  # 设置背景颜色为黄色
+    title_fill = PatternFill(start_color="C0C0C0", end_color="C0C0C0", fill_type="solid")
+
 
     thin_border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'),
                          bottom=Side(style='thin'))
@@ -133,8 +125,8 @@ def scan_save_to_excle(results):
         cell.fill = title_fill
         cell.border = thin_border
 
-    content_font = Font(name='Calibri', size=11)  # 设置内容字体为Calibri，大小为11
-    for row_num, result in enumerate(results, 2):  # 从第二行开始添加内容
+    content_font = Font(name='Calibri', size=11)
+    for row_num, result in enumerate(results, 2):
         for col_num, value in enumerate(result, 1):
             cell = ws.cell(row=row_num, column=col_num, value=value)
             cell.font = content_font
@@ -158,7 +150,6 @@ def scan_save_to_excle(results):
 
     os.remove(filename)
 
-# fofa 输出结果
 def fofa_save_to_excel(results):
     out_file = fofa_output_dir()
 
@@ -172,7 +163,7 @@ def fofa_save_to_excel(results):
     ws = wb.active
 
     title_font = Font(bold=True, name='宋体', size=12)
-    title_fill = PatternFill(start_color="C0C0C0", end_color="C0C0C0", fill_type="solid")  # 设置背景颜色为黄色
+    title_fill = PatternFill(start_color="C0C0C0", end_color="C0C0C0", fill_type="solid")
     for col_num, header in enumerate(csv_headers, 1):
         cell = ws.cell(row=1, column=col_num, value=header)
         cell.font = title_font
@@ -182,8 +173,8 @@ def fofa_save_to_excel(results):
                              bottom=Side(style='thin'))
         cell.border = thin_border
 
-    content_font = Font(name='Calibri', size=11)  # 设置内容字体为Calibri，大小为11
-    for row_num, result in enumerate(results, 2):  # 从第二行开始添加内容
+    content_font = Font(name='Calibri', size=11)
+    for row_num, result in enumerate(results, 2):
         for col_num, value in enumerate(result, 1):
             cell = ws.cell(row=row_num, column=col_num, value=value)
             cell.font = content_font
@@ -231,7 +222,7 @@ def hunter_save_to_excel(results):
         cell.border = thin_border
 
 
-    content_font = Font(name='Calibri', size=11)  # 设置内容字体为Calibri，大小为11
+    content_font = Font(name='Calibri', size=11)
     for result in results:
         row_values = list(result.values())
         ws.append(row_values)

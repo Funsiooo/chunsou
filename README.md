@@ -1,12 +1,8 @@
-![chunsou](./images/logo.png)
-
-
-
 ## 📖 简介
 
-![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou(%E6%98%A5%E8%92%90)-bottlegreen?logo=github) ![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-blue?logo=github) ![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/Funsiooo/chunsou?logo=github&color=%23ffb61e)
+![Static Badge](https://img.shields.io/badge/%E5%B7%A5%E5%85%B7-chunsou(%E6%98%A5%E8%92%90)-bottlegreen?logo=github) ![Static Badge](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python3-blue?logo=github) ![Static Badge](https://img.shields.io/badge/%E5%AE%9A%E4%BD%8D-Web%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-orange?logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/Funsiooo/chunsou?logo=github&color=%23ffb61e) ![GitHub forks](https://img.shields.io/github/forks/Funsiooo/chunsou?logo=github&color=%23f14885) ![GitHub watchers](https://img.shields.io/github/watchers/Funsiooo/chunsou?logo=github&color=%23ffd26b)
 
-Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA、Hunter资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
+Chunsou（春蒐），Python3编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA、Hunter资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
 
 [\[English Readme\]](https://github.com/Funsiooo/chunsou/tree/main/doc/Readme.md)
 
@@ -16,7 +12,7 @@ Chunsou（春蒐），Python编写的多线程Web指纹识别工具，适用于�
 
 Chunsou（春蒐）支持多线程扫描，默认线程为50，可根据需求指定线程数；可联动oneforall进行子域名爆破；支持调用 fofa api 进行资产收集；自定义流量代理；指定输出结果路径
 
-![image-20230730114043749](./images/1.png)
+![command_image](./images/1.png)
 
 ```
 usage: python3 chunsou.py [options]
@@ -152,3 +148,9 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 4、工具更新详情可查看log.md
 5、指纹不定期更新，最新指纹请下载 modules/config/finger.json 文件自行替换
 ```
+
+
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Funsiooo/chunsou&type=Date)](https://star-history.com/#Funsiooo/chunsou&Date)

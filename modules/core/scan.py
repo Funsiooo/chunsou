@@ -8,6 +8,8 @@
 '''
 
 import json
+from urllib.request import urlopen
+
 import requests
 import warnings
 from urllib3.exceptions import InsecureRequestWarning
@@ -15,7 +17,7 @@ from modules.core.color import Colors
 from modules.core.time import print_start_time, print_end_time, current_time
 from modules.core.args import argument
 from modules.core.agent import User_Agent
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, MarkupResemblesLocatorWarning
 from modules.core.proxy import proxies
 import threading
 import chardet
@@ -26,32 +28,29 @@ from modules.core.output import script_start, script_end, output_dir, scan_save_
 from modules.core.icon import get_ico_url, get_hash
 
 
-
+'''
+Single_scan
+'''
 def scan_rule(url):
     warnings.filterwarnings('ignore', category=InsecureRequestWarning)
-
     headers = User_Agent()
-
     response = requests.get(url, headers=headers, timeout=5, verify=False, proxies=proxies(), allow_redirects=False)
-
     content = response.content
     encoding = chardet.detect(content)['encoding']
 
     try:
         if encoding != 'utf-8':
-            html_body = content.decode('gbk')
-
+            html_text = content.decode('gbk')
         else:
-            html_body = content.decode(encoding)
+            html_text = content.decode(encoding)
     except Exception as e:
-        html_body = None
+        html_text = None
 
     header_string = str(response.headers)
-
     status_code = response.status_code
 
     try:
-        soup = BeautifulSoup(html_body, 'html.parser')
+        soup = BeautifulSoup(html_text, 'html.parser')
         page_title = soup.find("title")
         title = page_title.get_text().strip()
     except Exception as e:
@@ -65,18 +64,18 @@ def scan_rule(url):
     elif status_code == 302:
         redirected_url = response.url
         redirected_response = requests.get(redirected_url, headers=headers, verify=False, timeout=5)
-    
+
         if redirected_response.status_code == 200:
             soup = BeautifulSoup(redirected_response.content, 'html.parser')
             page_title = soup.find('title')
-    
+
             try:
                 title = page_title.get_text().strip()
             except Exception as e:
                 title = None
-    
+
             status_code = status_code
-    
+
             if title is None or len(title) == 0:
                 title = None
 
@@ -100,9 +99,9 @@ def scan_rule(url):
             location = fingerprints['location']
             keywords = fingerprints['keyword']
 
-            if html_body is not None:
+            if html_text is not None:
                 if method == 'keyword' and location == 'body':
-                    found_keywords = all(keyword in html_body for keyword in keywords)
+                    found_keywords = all(keyword in html_text for keyword in keywords)
                     if found_keywords:
                         return cms, status_code, title
 
@@ -133,6 +132,7 @@ def single_main():
 
     excle_results = []
 
+
     script_start()
 
     try:
@@ -141,6 +141,9 @@ def single_main():
             warnings.filterwarnings('ignore', category=InsecureRequestWarning)
             warnings.filterwarnings("ignore", category=UserWarning,
                                     message="Caught 'unbalanced parenthesis at position 119'")
+            warnings.filterwarnings("ignore", category=MarkupResemblesLocatorWarning)
+            warnings.filterwarnings("ignore", category=UserWarning, module="bs4")
+
             webpage = WebPage.new_from_url(url, verify=False, timeout=5)
 
             wappalyzer = Wappalyzer.latest()
@@ -163,18 +166,18 @@ def single_main():
 
                 with open(out_file, 'w') as file:
                     if detected_cms:
-                        result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
-                                 f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
-                                 f" | {Colors.ORANGE}{detected_cms}{Colors.RESET} | {Colors.ORANGE}{title}" \
-                                 f"{Colors.RESET} | {Colors.ORANGE}{final_key}{Colors.RESET}"
+                        result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
+                                 f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
+                                 f" | {Colors.BLUE}{detected_cms}{Colors.RESET} | {Colors.PURPLE}{title}" \
+                                 f"{Colors.RESET} | {Colors.PALEYELLOW}{final_key}{Colors.RESET}"
 
                         write_result = f"[+] [{status_code}] {url} | {detected_cms} | {title} | {final_key}"
 
                     else:
-                        result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
-                                 f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET} " \
-                                 f"| {Colors.ORANGE}None{Colors.RESET} | {Colors.ORANGE}{title}{Colors.RESET} | " \
-                                 f"{Colors.ORANGE}{final_key}{Colors.RESET}"
+                        result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
+                                 f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url} " \
+                                 f"| {Colors.BLUE}None{Colors.RESET} | {Colors.PURPLE}{title}{Colors.RESET} | " \
+                                 f"{Colors.PALEYELLOW}{final_key}{Colors.RESET}"
 
                         write_result = f"[+] [{status_code}] {url} | {detected_cms} | {title} | {final_key}"
 
@@ -183,8 +186,8 @@ def single_main():
 
             except Exception as e:
                 status_code = 404
-                error_result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.RED}[-]{Colors.RESET}" \
-                               f" {Colors.BROWN}[{status_code}]{Colors.RESET} {url}" \
+                error_result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.RED}-{Colors.RESET}]" \
+                               f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
                                f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
                 error_write_result = f"[-] {url} [{str(e)}]"
@@ -200,21 +203,19 @@ def single_main():
                 detected_cms, status_code, title = scan_rule(url)
 
                 if detected_cms:
-                    result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
-                             f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
-                             f" | {Colors.ORANGE}{detected_cms}{Colors.RESET} | {Colors.ORANGE}{title}" \
-                             f"{Colors.RESET} | {Colors.ORANGE}{final_key}{Colors.RESET}"
-
+                    result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
+                             f" [{Colors.BROWN}{status_code}{Colors.RESET}] [{url}]" \
+                             f" | {Colors.BLUE}{detected_cms}{Colors.RESET} | {Colors.PURPLE}{title}" \
+                             f"{Colors.RESET} | {Colors.PALEYELLOW}{final_key}{Colors.RESET}"
 
                     write_result = status_code, url, title, final_key, detected_cms
                     excle_results.append(write_result)
 
                 else:
-                    result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
-                             f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET} " \
-                             f"| {Colors.ORANGE}None{Colors.RESET} | {Colors.ORANGE}{title}{Colors.RESET} | " \
-                             f"{Colors.ORANGE}{final_key}{Colors.RESET}"
-
+                    result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
+                             f" [{Colors.BROWN}{status_code}{Colors.RESET}] [{url}] " \
+                             f"| {Colors.BLUE}None{Colors.RESET} | {Colors.PURPLE}{title}{Colors.RESET} | " \
+                             f"{Colors.PALEYELLOW}{final_key}{Colors.RESET}"
 
                     write_result = status_code, url, title, final_key, detected_cms
                     excle_results.append(write_result)
@@ -227,8 +228,8 @@ def single_main():
                 whoami = ' '
                 iamhahaha = ' '
 
-                error_result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.RED}[-]{Colors.RESET}" \
-                               f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
+                error_result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.RED}-{Colors.RESET}]" \
+                               f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
                                f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
                 write_result = status_code, url, whoami, iamhahaha, str(e)
@@ -242,15 +243,11 @@ def single_main():
 
     except Exception as e:
         pass
-        # 捕获到异常的报错信息
-        # print(f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.RED}[-]{Colors.RESET}{Colors.BROWN} "
-        #        f"[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET} {Colors.RED} [Error occurred, Check whether the network and target link are entered correctly. If the link is redirected, identify the redirected link again]{Colors.RESET}")
-        # print(f"[-] Error occurred during URL identification,Check whether the network is normal: {str(e)}")
 
 
 def lists_filename(file):
     urls = []
-    
+
     with open(file, 'r', encoding='utf-8') as file:
         target = [line.strip() for line in file]
 
@@ -277,7 +274,7 @@ def lists_main(file):
 
         script_start()
 
-        lock = threading.Lock()  # 创建一个锁来确保线程安全
+        lock = threading.Lock()
 
         if out_file.endswith(".txt"):
             with open(out_file, 'w') as file:
@@ -288,6 +285,11 @@ def lists_main(file):
                             warnings.filterwarnings('ignore', category=InsecureRequestWarning)
                             warnings.filterwarnings("ignore", category=UserWarning,
                                                     message="Caught 'unbalanced parenthesis at position 119'")
+
+                            warnings.filterwarnings("ignore", category=MarkupResemblesLocatorWarning)
+
+                            warnings.filterwarnings("ignore", category=UserWarning, module="bs4")
+
                             webpage = WebPage.new_from_url(url, verify=False, timeout=3)
 
                             wappalyzer = Wappalyzer.latest()
@@ -308,17 +310,17 @@ def lists_main(file):
                             detected_cms, status_code, title = scan_rule(url)
 
                             if detected_cms:
-                                result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
-                                         f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
-                                         f" | {Colors.ORANGE}{detected_cms}{Colors.RESET} | {Colors.ORANGE}{title}" \
-                                         f"{Colors.RESET} | {Colors.ORANGE}{final_key}{Colors.RESET}"
+                                result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
+                                         f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
+                                         f" | {Colors.BLUE}{detected_cms}{Colors.RESET} | {Colors.PURPLE}{title}" \
+                                         f"{Colors.RESET} | {Colors.PALEYELLOW}{final_key}{Colors.RESET}"
 
                                 write_result = f"[+] [{status_code}] {url} | {detected_cms} | {title} | {final_key}"
                             else:
-                                result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
-                                         f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET} " \
-                                         f"| {Colors.ORANGE}None{Colors.RESET} | {Colors.ORANGE}{title}{Colors.RESET} | " \
-                                         f"{Colors.ORANGE}{final_key}{Colors.RESET}"
+                                result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
+                                         f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url} " \
+                                         f" | {Colors.BLUE}None{Colors.RESET} | {Colors.PURPLE}{title}{Colors.RESET} | " \
+                                         f"{Colors.PALEYELLOW}{final_key}{Colors.RESET}"
                                 write_result = f"[+] [{status_code}] {url} | None | {title} | {final_key}"
 
                             print(result)
@@ -327,8 +329,8 @@ def lists_main(file):
 
                         except Exception as e:
                             status_code = 404
-                            error_result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.RED}[-]{Colors.RESET}" \
-                                           f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
+                            error_result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.RED}-{Colors.RESET}]" \
+                                           f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
                                            f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
                             error_write_result = f"[-] [{status_code}] {url} [{str(e)}]"
@@ -337,7 +339,6 @@ def lists_main(file):
                                 print(error_result)
                                 with open(out_file, 'a') as file:
                                     file.write(error_write_result + '\n')
-
 
             with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads()) as executor_threads:
                 futures = [executor_threads.submit(scan_url, url) for url in urls]
@@ -354,6 +355,10 @@ def lists_main(file):
                         warnings.filterwarnings('ignore', category=InsecureRequestWarning)
                         warnings.filterwarnings("ignore", category=UserWarning,
                                                 message="Caught 'unbalanced parenthesis at position 119'")
+                        warnings.filterwarnings("ignore", category=MarkupResemblesLocatorWarning)
+
+                        warnings.filterwarnings("ignore", category=UserWarning, module="bs4")
+
                         webpage = WebPage.new_from_url(url, verify=False, timeout=3)
 
                         wappalyzer = Wappalyzer.latest()
@@ -374,24 +379,23 @@ def lists_main(file):
                         detected_cms, status_code, title = scan_rule(url)
 
                         if detected_cms:
-                            result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
-                                     f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
-                                     f" | {Colors.ORANGE}{detected_cms}{Colors.RESET} | {Colors.ORANGE}{title}" \
-                                     f"{Colors.RESET} | {Colors.ORANGE}{final_key}{Colors.RESET}"
+                            result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
+                                     f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
+                                     f" | {Colors.BLUE}{detected_cms}{Colors.RESET} | {Colors.PURPLE}{title}" \
+                                     f"{Colors.RESET} | {Colors.PALEYELLOW}{final_key}{Colors.RESET}"
 
                             write_result = status_code, url, title, final_key, detected_cms
                             excle_results.append(write_result)
 
                         else:
-                            result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET}" \
-                                     f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET} " \
-                                     f"| {Colors.ORANGE}None{Colors.RESET} | {Colors.ORANGE}{title}{Colors.RESET} | " \
-                                     f"{Colors.ORANGE}{final_key}{Colors.RESET}"
+                            result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
+                                     f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url} " \
+                                     f" | {Colors.BLUE}None{Colors.RESET} | {Colors.PURPLE}{title}{Colors.RESET} | " \
+                                     f"{Colors.PALEYELLOW}{final_key}{Colors.RESET}"
 
                             write_result = status_code, url, title, final_key, detected_cms
                             excle_results.append(write_result)
 
-                        
                         print(result)
 
 
@@ -401,8 +405,8 @@ def lists_main(file):
                         whoami = ' '
                         iamhahaha = ' '
 
-                        error_result = f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.RED}[-]{Colors.RESET}" \
-                                       f" {Colors.BROWN}[{status_code}]{Colors.RESET} {Colors.YELLOW}{url}{Colors.RESET}" \
+                        error_result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.RED}-{Colors.RESET}]" \
+                                       f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
                                        f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
                         if args.e:
@@ -417,7 +421,6 @@ def lists_main(file):
                 concurrent.futures.wait(futures)
 
             script_end()
-
             scan_save_to_excle(excle_results)
 
     except Exception as e:

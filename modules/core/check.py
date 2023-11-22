@@ -18,19 +18,16 @@ from modules.core.color import Colors
 
 def check_version():
     try:
-        current_version = '1.3'
+        current_version = '1.5'
 
-        print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-              f"]{Colors.RESET} {Colors.GREEN}checking for the latest version{Colors.RESET}")
+        print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+              f"{Colors.RESET}] {Colors.GREEN}checking for the latest version{Colors.RESET}")
 
         url = "https://github.com/Funsiooo/chunsou/blob/main/version"
-        # 关闭https验证
         warnings.filterwarnings('ignore', category=InsecureRequestWarning)
 
-        # 随机 agent 从 uagent.py 引入
         headers = User_Agent()
 
-        # 定义 response 进行请求
         response = requests.get(url, headers=headers, timeout=3, verify=False, proxies=proxies(), allow_redirects=False)
 
         html = response.text
@@ -43,16 +40,16 @@ def check_version():
 
 
         if version == current_version:
-            print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-                  f"]{Colors.RESET} {Colors.GREEN}the current version is the latest version{Colors.RESET}")
+            print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+                  f"{Colors.RESET}] {Colors.GREEN}the current version is the latest version{Colors.RESET}")
         elif version != current_version:
-            print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-                  f"]{Colors.RESET} {Colors.GREEN}the current version is not the latest version{Colors.RESET}")
+            print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+                  f"{Colors.RESET}] {Colors.GREEN}the current version is not the latest version{Colors.RESET}")
         else:
-            print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-                  f"]{Colors.RESET} {Colors.GREEN}check failed, please visit the repository to check for yourself{Colors.RESET}")
+            print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+                  f"{Colors.RESET}] {Colors.GREEN}check failed, please visit the repository to check for yourself{Colors.RESET}")
 
     except Exception as e:
-        print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
-              f"]{Colors.RESET} {Colors.GREEN}check failed, please visit the repository to check for yourself{Colors.RESET}")
+        print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
+              f"{Colors.RESET}] {Colors.GREEN}check failed, please visit the repository to check for yourself{Colors.RESET}")
 
