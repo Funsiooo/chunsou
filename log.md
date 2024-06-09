@@ -1,4 +1,73 @@
 # 更新日志
+## 2024.06.09
+\- `指纹相关`：新增、优化部分指纹
+
+```html
+千宜科技医药管理系统
+千宜医药管理系统
+设备运维系统
+PHP/8.1.0-dev
+科拓全智能停车收费系统
+通天星CMSV6车载视频监控平台
+天智云智造管理平台
+绿盟 SAS堡垒机
+深信服DC数据中心管理系统
+致远互联FE协作办公平台
+堡塔云-WAF
+用友NC-Cloud
+用友YonBIP
+泛微-EOffice
+kkFileView文件文档在线系统
+北京亚鸿世纪互联网信息安全综合管理系统
+飞鱼星路由器
+龙卷风科技 CMS
+jeevms 仓库管理系统
+pkpmbs 工程监督系统
+mm 文档管理器
+hi-bridge 网关
+ZyXEL 路由器
+opencart 通讯模块
+cockpit 数字平台
+建文工程管理系统
+奥威亚视频云平台
+I Doc View在线文档预览系统
+大唐电信AC集中管理平台
+Hikvision SPON IP网络对讲广播系统
+likeshop开源免费商用电商系统
+Yearning MYSQL SQL语句审核平台
+CloudPanel
+金盘移动图书馆管理系统
+JeePlus低代码开发平台
+大华DSS Digital Surveillance System系统
+D-Link NAS设备
+图创图书馆集群管理系统
+AJ-Report
+Gradio
+用友U8CRM
+任我行在线订货系统
+邦永PM2项目管理系统
+用友-UFIDA-NC
+魔方网表 ERP
+睿贝软件-企业管理协作平台
+IP-guard
+用友-政务财务系统
+玲珑扫描器
+拓维OA
+世纪信通管理系统
+脸爱云一脸通智慧管理平台
+WestEngine-微擎
+联软安渡UniNXG安全数据交换系统
+SunFull-Webs
+六零导航页
+北大方正全媒体采编系统
+北大方正全媒体采编系统V2.1
+北大方正全媒体采编系统V3.0
+捷诚EnjoySCM
+平升水库
+华测智控-SLMS
+凌思云实验室信息管理系统
+SpringBladex
+```
 ## 2023.11.22
 \- `功能相关`：优化相关功能
 
