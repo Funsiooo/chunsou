@@ -9,6 +9,7 @@
 
 import json
 from urllib.request import urlopen
+import ipaddress
 
 import requests
 import warnings
@@ -21,6 +22,7 @@ from bs4 import BeautifulSoup, MarkupResemblesLocatorWarning
 from modules.core.proxy import proxies
 import threading
 import chardet
+import urllib.parse
 import concurrent.futures
 from Wappalyzer import Wappalyzer, WebPage
 from modules.core.threads import num_threads
@@ -127,7 +129,9 @@ def scan_rule(url):
 
 def single_main():
     args = argument()
+
     url = args.url
+
     out_file = output_dir()
 
     excle_results = []
@@ -248,17 +252,43 @@ def single_main():
 def lists_filename(file):
     urls = []
 
-    with open(file, 'r', encoding='utf-8') as file:
-        target = [line.strip() for line in file]
+    with open(file, 'r', encoding='utf-8') as f:
+        target = [line.strip() for line in f]
 
         for url in target:
-            if not url.startswith(('http://', 'https://')):
-                url_http = 'http://' + url
-                url_https = 'https://' + url
-                urls.append(url_http)
-                urls.append(url_https)
+            if '/' in url:
+                try:
+                    network = ipaddress.ip_network(url, strict=False)
+                    for ip in network:
+                        url_http = 'http://' + str(ip)
+                        url_https = 'https://' + str(ip)
+                        urls.append(url_http)
+                        urls.append(url_https)
+                except ValueError:
+                    urls.append(url)
+            elif '-' in url:
+                try:
+                    start_ip, end_ip = url.split('-')
+                    start_ip_obj = ipaddress.ip_address(start_ip.strip())
+                    end_ip_obj = ipaddress.ip_address(end_ip.strip())
+                    for ip in range(int(start_ip_obj), int(end_ip_obj) + 1):
+                        url_http = 'http://' + str(ipaddress.ip_address(ip))
+                        url_https = 'https://' + str(ipaddress.ip_address(ip))
+                        urls.append(url_http)
+                        urls.append(url_https)
+                except ValueError:
+                    urls.append(url)
+
+                except ValueError:
+                    urls.append(url)
             else:
-                urls.append(url)
+                if not url.startswith(('http://', 'https://')):
+                    url_http = 'http://' + url
+                    url_https = 'https://' + url
+                    urls.append(url_http)
+                    urls.append(url_https)
+                else:
+                    urls.append(url)
 
     return urls
 
