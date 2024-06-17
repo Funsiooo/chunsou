@@ -74,7 +74,7 @@ pip3 install -r requirements.txt
 # 单目标指纹识别
 python3 chunsou.py -u http://example.com
 
-# 多目标指纹识别（默认只输出成功请求的结果，报错url不显示，若需要显示报错信息加上 -e ）
+# 多目标指纹识别（默认只输出成功请求的结果，报错url不显示，若需要显示报错信息加上 -e ，扫描网段.txt内容格式例：192.168.1.0/24、192.168.1.1-192.168.1.1-100）
 python3 chunsou.py -f urls.txt
 
 # 单目标子域名爆破(目前调用 oneforall 进行子域名爆破)
