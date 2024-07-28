@@ -5,6 +5,161 @@
         "location": "body",
         "keyword": ["/seeyon/USER-DATA/IMAGES/LOGIN/login.gif"]
     }, {
+        "cms": "创客13星零售商城系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/Public/Xin/static/css/iconfont.css"]
+    }, {
+        "cms": "F-logic_DataCube3",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["DataCube3"]
+    }, {
+        "cms": "RAISECOM网关设备",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/images/raisecom/back.gif"]
+    }, {
+        "cms": "深澜计费管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/js/lib/slimscroll.js"]
+    }, {
+          "cms": "宏脉医美行业管理系统",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["宏脉医美行业管理系统"]
+    }, {
+        "cms": "金慧综合管理信息系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/portal/LoginBegin.aspx"]
+    }, {
+        "cms": "汇智ERP",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["3652375904"]
+    }, {
+        "cms": "湖南众合百易信息技术有限公司 资产管理运营系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["4086811964"]
+    }, {
+        "cms": "湖南众合百易信息技术有限公司 资产管理运营系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["湖南众合百易信息技术有限公司"]
+    }, {
+        "cms": "飞讯云WMS",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["wx8ccb75857bd3e985"]
+    }, {
+        "cms": "红海云eHR",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/RedseaPlatform/skins/images/favicon.ico"]
+    }, {
+        "cms": "红海云eHR",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["1506877856"]
+    }, {
+        "cms": "Bazarr",
+        "method": "keyword",
+        "location": "title",
+        "keyword": ["Bazarr"]
+    }, {
+        "cms": "华磊科技物流系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["l_c_bar"]
+    }, {
+        "cms": "华磊科技物流系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["l_c_center"]
+    }, {
+        "cms": "LiveNVR流媒体服务软件",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["4088866972"]
+    }, {
+        "cms": "LiveNVR流媒体服务软件",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["<title>LiveNVS</title>"]
+    }, {
+        "cms": "上海上讯信息技术股份有限公司运维管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["版权所有 © 2020 上海上讯信息技术股份有限公司"]
+    }, {
+        "cms": "Sharp 打印机",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["連接至Sharp 全球網站"]
+    }, {
+        "cms": "Kass 文档管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/pan/mobile/index.html"]
+    }, {
+        "cms": "同享TXEHR V15人力管理管理平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/Assistant/Default.aspx"]
+    }, {
+        "cms": "福建科立讯通信-指挥调度管理平台",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["2323463165"]
+    }, {
+        "cms": "福建科立讯通信-指挥调度管理平台",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["指挥调度管理平台"]
+    }, {
+        "cms": "润乾报表",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/raqsoft"]
+    }, {
+        "cms": "云课网校系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/static/libs/common/jquery.stickyNavbar.min.js"]
+    }, {
+        "cms": "数字通指尖云平台-智慧政务",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["assets/8cca19ff/css/bootstrap-yii.css"]
+    }, {
+        "cms": "赛蓝企业管理系统",
+        "method": "icon_hash",
+        "location": "body",
+        "keyword": ["1074156515"]
+    }, {
+        "cms": "赛蓝企业管理系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["赛蓝企业管理系统","www.cailsoft.com"]
+    }, {
+        "cms": "天问物业ERP系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["国家版权局软著登字第1205328号"]
+    }, {
+        "cms": "天问物业ERP系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["天问物业ERP系统"]
+    }, {
+        "cms": "天问物业ERP系统",
+        "method": "keyword",
+        "location": "body",
+        "keyword": ["/HM/M_Main/frame/sso.aspx"]
+    }, {
         "cms": "千宜科技医药管理系统",
         "method": "icon_hash",
         "location": "body",
@@ -139,11 +294,6 @@
         "method": "keyword",
         "location": "title",
         "keyword": ["Authenticate Please!"]
-    }, {
-        "cms": "建文工程管理系统",
-        "method": "icon_hash",
-        "location": "body",
-        "keyword": ["630899054"]
     }, {
         "cms": "建文工程管理系统",
         "method": "keyword",
@@ -584,11 +734,6 @@
         "method": "keyword",
         "location": "body",
         "keyword": ["cas/css/ace-part2.min.css"]
-    }, {
-        "cms": "汉塔科技上网行为流量管理系统",
-        "method": "icon_hash",
-        "location": "body",
-        "keyword": ["428165606"]
     }, {
         "cms": "汉塔科技上网行为流量管理系统",
         "method": "keyword",
@@ -3300,11 +3445,6 @@
         "location": "body",
         "keyword": ["3467175824"]
     }, {
-        "cms": "Microsoft IIS",
-        "method": "icon_hash",
-        "location": "body",
-        "keyword": ["2880491738"]
-    }, {
         "cms": "Univention Portal",
         "method": "icon_hash",
         "location": "body",
@@ -4990,11 +5130,6 @@
         "location": "body",
         "keyword": ["epoint-web-zwdt"]
      }, {
-        "cms": "奥联通讯管理平台",
-        "method": "icon_hash",
-        "location": "body",
-        "keyword": ["1506877856"]
-     }, {
         "cms": "百傲瑞达",
         "method": "icon_hash",
         "location": "body",
@@ -5839,11 +5974,6 @@
         "method": "keyword",
         "location": "body",
         "keyword": ["WSO2 API MANAGER"]
-    }, {
-        "cms": "网神SecGate 3600防火墙",
-        "method": "icon_hash",
-        "location": "body",
-        "keyword": ["428165606"]
     }, {
         "cms": "D_Link-DCS-4622",
         "method": "keyword",
@@ -19440,11 +19570,6 @@
         "method": "keyword",
         "location": "body",
         "keyword": ["href=\"mailto:otrs@bearingpoint.com", "src=\"/otrs-web/images/"]
-    }, {
-        "cms": "OpenSSL",
-        "method": "keyword",
-        "location": "header",
-        "keyword": ["openssl"]
     }, {
         "cms": "OpenStage-IP-Phone",
         "method": "keyword",
@@ -36311,11 +36436,6 @@
             "method": "keyword",
             "location": "header",
             "keyword": ["X-Unbounce-Pageid"]
-        }, {
-            "cms": "OpenSSL",
-            "method": "keyword",
-            "location": "header",
-            "keyword": ["OpenSSL"]
         }, {
             "cms": "SMA_Sunny_Webbox",
             "method": "keyword",
