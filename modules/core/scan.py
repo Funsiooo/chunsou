@@ -180,8 +180,8 @@ def single_main():
                     if detected_cms:
                         result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
                                  f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET}" \
-                                 f" {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{detected_cms}{Colors.RESET} {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{title}" \
-                                 f"{Colors.RESET} {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{final_key}{Colors.RESET}"
+                                 f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{detected_cms}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{title}" \
+                                 f"{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{final_key}{Colors.RESET}"
 
                         write_result = f"[+] [{status_code}] {url} | {detected_cms} | {title} | {final_key}"
 
@@ -357,7 +357,7 @@ def lists_main(file):
                             else:
                                 result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
                                          f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} " \
-                                         f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
+                                         f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.WHITE}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
                                          f"{Colors.YELLOW_B}{final_key}{Colors.RESET}"
                                 write_result = f"[+] [{status_code}] {url} | None | {title} | {final_key}"
 
@@ -428,7 +428,7 @@ def lists_main(file):
                         else:
                             result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
                                      f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} " \
-                                     f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
+                                     f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
                                      f"{Colors.YELLOW_B}{final_key}{Colors.RESET}"
 
                             write_result = status_code, url, title, final_key, detected_cms
