@@ -112,7 +112,7 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 
 ![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E6%9D%A5%E6%BA%90-orange?logo=adminer) ![Static Badge](https://img.shields.io/badge/%E6%8C%87%E7%BA%B9%E8%A7%84%E5%88%99-blue?logo=hyperledger)
 
-部分指纹来源于优秀开源项目 [Ehole](https://github.com/EdgeSecurityTeam/EHole) 、 [dismap](https://github.com/zhzyker/dismap)、 以及部分自收集，目前指纹规则条数约 10000+ (指纹条数，非程序个数)
+部分指纹来源于优秀开源项目 [Ehole](https://github.com/EdgeSecurityTeam/EHole) 、 [dismap](https://github.com/zhzyker/dismap), 部分自收集，目前指纹规则条数约 10000+ (指纹条数，非程序个数)
 
 指纹规则，目前支持`网站关键字`、`网站 title`、`网站 header`、`网站 ico hash` 四种指纹匹配方式，相应规则如下：
 
