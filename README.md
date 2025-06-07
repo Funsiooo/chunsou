@@ -4,15 +4,17 @@
 
 Chunsou（春蒐），Python3编写的多线程Web指纹识别工具，适用于安全测试人员前期的资产识别、风险收敛以及企业互联网资产摸查。目前主要功能为针对Web资产进行指纹识别，目前指纹规则条数约 10000+，辅助功能包括子域名爆破和FOFA、Hunter资产收集。工具开发初衷为辅助网络安全人员开展测试工作，提高资产识别和管理的效率。
 
+![command_image](./images/2.png)
+
 [\[English Readme\]](https://github.com/Funsiooo/chunsou/tree/main/doc/Readme.md)
 
 
 
 ## 🥏 选项
 
-Chunsou（春蒐）支持多线程扫描，默认线程为50，可根据需求指定线程数；可联动oneforall进行子域名爆破；支持调用 fofa api 进行资产收集；自定义流量代理；指定输出结果路径
+Chunsou（春蒐）支持多线程扫描（默认50线程，支持自定义）、联动OneForAll爆破子域名、调用Fofa、Hunter API收集资产、配置流量代理，以及自定义结果输出路径。
 
-![command_image](./images/1.png)
+![command_image](./images/3.png)
 
 ```
 usage: python3 chunsou.py [options]
@@ -35,9 +37,10 @@ others:
   -t , --threads        specify the number of scanning threads, default 50
   -h, --help            show this help message and exit
   -o , --output         specified output file
+  -e                    displays the specific error cause that cannot be identified by multi-object scanning
 
 example:
-  -u , --url            python3 chunsou.py -u http://example.com
+  -u , --url            python3 chunsou.py -u 'http://example.com'
   -f , --file           python3 chunsou.py -f urls.txt
   -p  , --proxy         python3 chunsou.py -u http://example.com -p http://127.0.0.1
   -t  , --threads       python3 chunsou.py -f urls.txt -t 100
@@ -46,8 +49,8 @@ example:
   -df , --domains       python3 chunsou.py -df domains.txt
   -fo , --fofa          python3 chunsou.py -fo domain="example.com"
   -hu , --hunter        python3 chunsou.py -hu domain="example.com"
-  -tip,                 python3 chunsou.py -tip
   -e  ,                 python3 chunsou.py -f urls.txt -e
+  -tip,                 python3 chunsou.py -tip
 ```
 
 
@@ -71,8 +74,8 @@ pip3 install -r requirements.txt
 > 具体使用指令
 
 ```python
-# 单目标指纹识别
-python3 chunsou.py -u http://example.com
+# 单目标指纹识别（ 注:若url出现特殊字符如 ?&$ 等，不使用单引号包裹会导致报错）
+python3 chunsou.py -u 'http://example.com'
 
 # 多目标指纹识别（默认只输出成功请求的结果，报错url不显示，若需要显示报错信息加上 -e ，扫描网段.txt内容格式例：192.168.1.0/24、192.168.1.1-192.168.1.1-100）
 python3 chunsou.py -f urls.txt

@@ -40,10 +40,8 @@ def hunter_search(qbase64):
     hunter_size = config.get('hunter_size', 'size').strip('"')
 
     if not hunter_api_key or not hunter_size:
-        print(f"{Colors.CYAN}{print_start_time()} {Colors.RED}[-]{Colors.RESET} {Colors.GREEN}{Colors.RESET}"
-              f"{Colors.RED}hunter invoke failure , Please Check that the hunter api file config.ini is configured "
-              f"correctly"
-              f".{Colors.RESET}")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.RED}hunter invoke failure , Please Check that the hunter api file config.ini is configured correctly{Colors.RESET}")
+
 
     # api_key = ''
     page = '1'
@@ -109,7 +107,9 @@ def hunter_search(qbase64):
 
         params_list.append(params)
 
-        print(f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET} {url}")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {url}")
+        
 
         # print(url,ip,port,web_title,domain,is_risk_protocol,is_risk,protocol,base_protocol,status_code,os,company,number,country,city)
 

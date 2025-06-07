@@ -4,15 +4,13 @@
 
 Chunsou is a multi-threaded web fingerprint recognition tool written in Python, which is suitable for security testers to identify assets, converge risks, and investigate enterprise Internet assets in the early stage. It mainly focuses on web assets for fingerprint recognition, currently supporting about 10000+ fingerprint rules. In addition, the tool also provides auxiliary functions such as subdomain blasting and Fofa and Hunter asset collection. The tool was developed with the aim of helping network security personnel improve the efficiency of asset identification and management, and assist them in conducting testing work.
 
-
-
-
+![image-20230730114043749](../images/2.png)
 
 ## 🥏 Options
 
-Chunsou is capable of multi-threaded scanning with the default number of threads set to 50, which can be specified according to the user's requirements. It can be linked with oneforall for subdomain blasting and supports calling the fofa API for asset collection. It also allows for custom traffic proxy and the ability to specify the output result path.
+Chunsou is capable of multi-threaded scanning with the default number of threads set to 50, which can be specified according to the user's requirements. It can be linked with oneforall for subdomain blasting and supports calling the fofa or hunter API for asset collection. It also allows for custom traffic proxy and the ability to specify the output result path.
 
-![image-20230730114043749](../images/1.png)
+![image-20230730114043749](../images/3.png)
 
 ```
 usage: python3 chunsou.py [options]
@@ -35,9 +33,10 @@ others:
   -t , --threads        specify the number of scanning threads, default 50
   -h, --help            show this help message and exit
   -o , --output         specified output file
+  -e                    displays the specific error cause that cannot be identified by multi-object scanning
 
 example:
-  -u , --url            python3 chunsou.py -u http://example.com
+  -u , --url            python3 chunsou.py -u 'http://example.com'
   -f , --file           python3 chunsou.py -f urls.txt
   -p  , --proxy         python3 chunsou.py -u http://example.com -p http://127.0.0.1
   -t  , --threads       python3 chunsou.py -f urls.txt -t 100
@@ -46,6 +45,7 @@ example:
   -df , --domains       python3 chunsou.py -df domains.txt
   -fo , --fofa          python3 chunsou.py -fo domain="example.com"
   -hu , --hunter        python3 chunsou.py -hu domain="example.com"
+  -e  ,                 python3 chunsou.py -f urls.txt -e
   -tip,                 python3 chunsou.py -tip
 ```
 
@@ -71,7 +71,7 @@ pip3 install -r requirements.txt
 
 ```python
 # Single target fingerprint recognition
-python3 chunsou.py -u http://example.com
+python3 chunsou.py -u 'http://example.com'
 
 # Multiple targets fingerprint recognition
 python3 chunsou.py -f urls.txt

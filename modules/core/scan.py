@@ -86,10 +86,17 @@ def scan_rule(url):
         if title is None or len(title) == 0:
             title = None
 
-
-    ico_content = requests.get(url=get_ico_url(url), headers=headers, timeout=5, verify=False).content
-    ico_hash = get_hash(ico_content)
-
+    # 优化 icon_hash 报错
+    try:
+        ico_content = requests.get(url=get_ico_url(url), headers=headers, timeout=5, verify=False).content
+        if not ico_content:
+            print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} ERROR: Failed to get favicon icon_hash value, check the network condition")
+        else:
+            ico_hash = get_hash(ico_content)
+    except requests.exceptions.RequestException as e:
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} ERROR: Failed to get favicon icon_hash value, check the network condition")
 
     with open('modules/config/finger.json', 'r', encoding='utf-8') as file:
         fingerprint = json.load(file)
@@ -125,7 +132,8 @@ def scan_rule(url):
 
         return None, status_code, title
     except Exception as e:
-        print(f"[-] Error occurred during URL identification,Check whether the network is normal: {str(e)}")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} ERROR: Ocurred during URL identification,Check whether the network is normal")
 
 def single_main():
     args = argument()
@@ -170,18 +178,18 @@ def single_main():
 
                 with open(out_file, 'w') as file:
                     if detected_cms:
-                        result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
-                                 f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
-                                 f" | {Colors.BLUE}{detected_cms}{Colors.RESET} | {Colors.PURPLE}{title}" \
-                                 f"{Colors.RESET} | {Colors.PALEYELLOW}{final_key}{Colors.RESET}"
+                        result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                                 f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET}" \
+                                 f" {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{detected_cms}{Colors.RESET} {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{title}" \
+                                 f"{Colors.RESET} {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{final_key}{Colors.RESET}"
 
                         write_result = f"[+] [{status_code}] {url} | {detected_cms} | {title} | {final_key}"
 
                     else:
-                        result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
-                                 f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url} " \
-                                 f"| {Colors.BLUE}None{Colors.RESET} | {Colors.PURPLE}{title}{Colors.RESET} | " \
-                                 f"{Colors.PALEYELLOW}{final_key}{Colors.RESET}"
+                        result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                                 f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} " \
+                                 f"{Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
+                                 f"{Colors.YELLOW_B}{final_key}{Colors.RESET}"
 
                         write_result = f"[+] [{status_code}] {url} | {detected_cms} | {title} | {final_key}"
 
@@ -190,8 +198,8 @@ def single_main():
 
             except Exception as e:
                 status_code = 404
-                error_result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.RED}-{Colors.RESET}]" \
-                               f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
+                error_result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                               f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET}" \
                                f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
                 error_write_result = f"[-] {url} [{str(e)}]"
@@ -207,19 +215,19 @@ def single_main():
                 detected_cms, status_code, title = scan_rule(url)
 
                 if detected_cms:
-                    result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
-                             f" [{Colors.BROWN}{status_code}{Colors.RESET}] [{url}]" \
-                             f" | {Colors.BLUE}{detected_cms}{Colors.RESET} | {Colors.PURPLE}{title}" \
-                             f"{Colors.RESET} | {Colors.PALEYELLOW}{final_key}{Colors.RESET}"
+                    result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                             f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} [{url}]" \
+                             f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW}{detected_cms}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW}{title}" \
+                             f"{Colors.YELLOW} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW}{final_key}{Colors.RESET}"
 
                     write_result = status_code, url, title, final_key, detected_cms
                     excle_results.append(write_result)
 
                 else:
-                    result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
-                             f" [{Colors.BROWN}{status_code}{Colors.RESET}] [{url}] " \
-                             f"| {Colors.BLUE}None{Colors.RESET} | {Colors.PURPLE}{title}{Colors.RESET} | " \
-                             f"{Colors.PALEYELLOW}{final_key}{Colors.RESET}"
+                    result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                             f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}] [{url}] " \
+                             f"{Colors.WHITE}|{Colors.RESET} {Colors.YELLOW}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
+                             f"{Colors.YELLOW}{final_key}{Colors.RESET}"
 
                     write_result = status_code, url, title, final_key, detected_cms
                     excle_results.append(write_result)
@@ -232,9 +240,9 @@ def single_main():
                 whoami = ' '
                 iamhahaha = ' '
 
-                error_result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.RED}-{Colors.RESET}]" \
-                               f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
-                               f"{Colors.RED} [{str(e)}] {Colors.RESET}"
+                error_result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                               f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {url}" \
+                               f"{Colors.RED} {Colors.WHITE}[{Colors.RESET}{str(e)}{Colors.WHITE}]{Colors.RESET} {Colors.RESET}"
 
                 write_result = status_code, url, whoami, iamhahaha, str(e)
                 excle_results.append(write_result)
@@ -340,17 +348,17 @@ def lists_main(file):
                             detected_cms, status_code, title = scan_rule(url)
 
                             if detected_cms:
-                                result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
-                                         f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
-                                         f" | {Colors.BLUE}{detected_cms}{Colors.RESET} | {Colors.PURPLE}{title}" \
-                                         f"{Colors.RESET} | {Colors.PALEYELLOW}{final_key}{Colors.RESET}"
+                                result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                                         f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET}" \
+                                         f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{detected_cms}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{title}" \
+                                         f"{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{final_key}{Colors.RESET}"
 
                                 write_result = f"[+] [{status_code}] {url} | {detected_cms} | {title} | {final_key}"
                             else:
-                                result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
-                                         f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url} " \
-                                         f" | {Colors.BLUE}None{Colors.RESET} | {Colors.PURPLE}{title}{Colors.RESET} | " \
-                                         f"{Colors.PALEYELLOW}{final_key}{Colors.RESET}"
+                                result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                                         f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} " \
+                                         f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
+                                         f"{Colors.YELLOW_B}{final_key}{Colors.RESET}"
                                 write_result = f"[+] [{status_code}] {url} | None | {title} | {final_key}"
 
                             print(result)
@@ -359,8 +367,8 @@ def lists_main(file):
 
                         except Exception as e:
                             status_code = 404
-                            error_result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.RED}-{Colors.RESET}]" \
-                                           f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
+                            error_result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                                           f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET}" \
                                            f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
                             error_write_result = f"[-] [{status_code}] {url} [{str(e)}]"
@@ -409,19 +417,19 @@ def lists_main(file):
                         detected_cms, status_code, title = scan_rule(url)
 
                         if detected_cms:
-                            result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
-                                     f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
-                                     f" | {Colors.BLUE}{detected_cms}{Colors.RESET} | {Colors.PURPLE}{title}" \
-                                     f"{Colors.RESET} | {Colors.PALEYELLOW}{final_key}{Colors.RESET}"
+                            result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                                     f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET}" \
+                                     f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{detected_cms}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{title}" \
+                                     f"{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{final_key}{Colors.RESET}"
 
                             write_result = status_code, url, title, final_key, detected_cms
                             excle_results.append(write_result)
 
                         else:
-                            result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}+{Colors.RESET}]" \
-                                     f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url} " \
-                                     f" | {Colors.BLUE}None{Colors.RESET} | {Colors.PURPLE}{title}{Colors.RESET} | " \
-                                     f"{Colors.PALEYELLOW}{final_key}{Colors.RESET}"
+                            result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                                     f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} " \
+                                     f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.YELLOW_B}|{Colors.RESET} {Colors.YELLOW_B}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
+                                     f"{Colors.YELLOW_B}{final_key}{Colors.RESET}"
 
                             write_result = status_code, url, title, final_key, detected_cms
                             excle_results.append(write_result)
@@ -435,8 +443,8 @@ def lists_main(file):
                         whoami = ' '
                         iamhahaha = ' '
 
-                        error_result = f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.RED}-{Colors.RESET}]" \
-                                       f" [{Colors.BROWN}{status_code}{Colors.RESET}] {url}" \
+                        error_result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
+                                       f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {url}" \
                                        f"{Colors.RED} [{str(e)}] {Colors.RESET}"
 
                         if args.e:

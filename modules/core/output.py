@@ -20,23 +20,26 @@ from modules.core.check import check_version
 
 def script_start():
     check_version()
-    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-          f"{Colors.RESET}] {Colors.GREEN}fingerprint recognition result order | Website fingerprint | Web title | "
-          f"Web stack{Colors.RESET}")
+    print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Fingerprint schema: Website | Title | Stack{Colors.RESET}\n")
     # print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
     #       f"]{Colors.RESET} {Colors.GREEN}the program starts running, and the following are the fingerprint recognition results{Colors.RESET}")
 
 
 
 def script_end():
-    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-          f"{Colors.RESET}] {Colors.GREEN}the script has finished "
-          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.ORANGE}{output_dir()}{Colors.RESET}"
-          f" , {Colors.GREEN}scan end @ {current_time()}{Colors.RESET}")
+    print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Scan completed "
+          f"Results saved to{Colors.RESET} {Colors.YELLOW}{output_dir()}{Colors.RESET}"
+          f" , {Colors.WHITE}scan end @ {Colors.RESET}{Colors.YELLOW}{current_time()}{Colors.RESET}")
+    # print(" ")
+    # print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} \033[1;37m[*] Scan completed in \033[93m00:00:03.15\033[0m")
+    # print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} \033[1;37m[*] Results saved to \033[33mresults/results.txt\033[0m")
+    # print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} \033[1;37m[*] Scan ended at \033[93m2025-05-20 11:39:02.983339\033[0m")
 
 def tip_start():
-    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-          f"{Colors.RESET}] {Colors.GREEN} The basic syntax for mapping in FOFA and Hunter spaces is as follows. Please be mindful of user permissions when using it {Colors.RESET}")
+    print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE} The basic syntax for mapping in FOFA and Hunter spaces is as follows. Please be mindful of user permissions when using it {Colors.RESET}")
     # print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
     #       f"]{Colors.RESET} {Colors.GREEN}the program starts running, and the following are the fingerprint recognition results{Colors.RESET}")
 
@@ -76,29 +79,29 @@ def hunter_output_dir():
 
 def fofa_start():
     check_version()
-    print(f"[{Colors.CYAN}{print_start_time()}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-          f"{Colors.RESET}] {Colors.GREEN}to start calling the hunter api, you need to correctly configure the api in the modules/config/config.ini file{Colors.RESET}")
+    print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}to start calling the fofa api, you need to correctly configure the api in the {Colors.YELLOW_B}modules/config/config.ini{Colors.RESET} file{Colors.RESET}")
 
 
 
 def fofa_end():
-    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-          f"{Colors.RESET}] {Colors.GREEN}the script has finished "
-          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.ORANGE}{fofa_output_dir()}{Colors.RESET}"
-          f" , {Colors.GREEN}scan end @ {current_time()}{Colors.RESET}")
+    print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}[{Colors.RESET} {Colors.WHITE}the script has finished "
+          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.YELLOW_B}{fofa_output_dir()}{Colors.RESET}"
+          f" , scan end @ {Colors.YELLOW}{current_time()}{Colors.RESET}")
 
 def hunter_start():
     check_version()
-    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-          f"{Colors.RESET}] {Colors.GREEN}to start calling the hunter api, you need to correctly configure the api in the modules/config/config.ini file{Colors.RESET}")
+    print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}to start calling the hunter api, you need to correctly configure the api in the {Colors.YELLOW_B}modules/config/config.ini{Colors.RESET} file{Colors.RESET}")
 
 
 
 def hunter_end():
-    print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-          f"{Colors.RESET}] {Colors.GREEN}the script has finished "
-          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.ORANGE}{hunter_output_dir()}{Colors.RESET}"
-          f" , {Colors.GREEN}scan end @ {current_time()}{Colors.RESET}")
+    print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.CYAN}the script has finished "
+          f"executing, and the scan results are saved in the{Colors.RESET} {Colors.YELLOW}{hunter_output_dir()}{Colors.RESET}"
+          f" , scan end @ {Colors.YELLOW}{current_time()}{Colors.RESET}")
 
 
 

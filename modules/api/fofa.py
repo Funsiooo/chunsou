@@ -90,8 +90,8 @@ def fofa_search(email,key,qbase64,page,size,fields):
 
 
     except requests.exceptions.RequestException as e:
-        print(f"{Colors.CYAN}{print_start_time()} {Colors.RED}[-]{Colors.RESET} {Colors.GREEN}[INFO"
-              f"]{Colors.RESET}  {Colors.RED}{str(e)}{Colors.RESET}\n")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.RED}{str(e)}{Colors.RESET}\n")
         sys.exit()
 
 
@@ -143,7 +143,8 @@ def fofa_main():
         # fofa_results_title = result[1]
         # if fofa_results_title == '':
         #     fofa_results_title = 'None'
-        print(f"{Colors.CYAN}{print_start_time()}{Colors.RESET} {Colors.GREEN}[+]{Colors.RESET} {fofa_results_url}")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {fofa_results_url}")
 
     # 执行脚本结束提示语
     fofa_end()

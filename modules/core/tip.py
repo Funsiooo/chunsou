@@ -10,6 +10,8 @@
 
 from tabulate import tabulate
 from modules.core.output import tip_start
+from modules.core.color import Colors
+
 def tips():
     fofa_table_data = [
         ["例句", "用途说明", "注"],
@@ -135,7 +137,7 @@ def tips():
     # table = colored(table, "cyan", attrs=["bold"])
     # table_plain = tabulate(table_data, headers="firstrow", tablefmt="plain")
 
-    print('''
+    fofa_title = '''
  ______     __                                _                                                      
 |  ____|   / _|                              | |                                                     
 | |__ ___ | |_ __ _   ___  ___  __ _ _ __ ___| |__     __ _ _ __ __ _ _ __ ___  _ __ ___   __ _ _ __ 
@@ -144,10 +146,11 @@ def tips():
 |_|  \___/|_| \__,_| |___/\___|\__,_|_|  \___|_| |_|  \__, |_|  \__,_|_| |_| |_|_| |_| |_|\__,_|_|   
                                                        __/ |                                         
                                                       |___/                                                                          
-                                                                       ''')
-    print(fofa_table_orgtbl)
+                                                                       '''
+    print(f"{Colors.WHITE}{fofa_title}{Colors.RESET}")
+    print(f"{Colors.WHITE}{fofa_table_orgtbl}{Colors.RESET}")
     print('\n')
-    print('''
+    hunter_title = '''
  _    _             _                                      _                                                      
 | |  | |           | |                                    | |                                                     
 | |__| |_   _ _ __ | |_ ___ _ __   ___  ___  __ _ _ __ ___| |__     __ _ _ __ __ _ _ __ ___  _ __ ___   __ _ _ __ 
@@ -156,8 +159,9 @@ def tips():
 |_|  |_|\__,_|_| |_|\__\___|_|    |___/\___|\__,_|_|  \___|_| |_|  \__, |_|  \__,_|_| |_| |_|_| |_| |_|\__,_|_|   
                                                                     __/ |                                         
                                                                    |___/                                      
-                                                                       ''')
-    print(hunter_table_orgtbl)
+                                                                       '''
+    print(f"{Colors.WHITE}{hunter_title}{Colors.RESET}")
+    print(f"{Colors.WHITE}{hunter_table_orgtbl}{Colors.RESET}")
 
 def tip_main():
     tip_start()

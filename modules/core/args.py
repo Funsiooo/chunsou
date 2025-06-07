@@ -9,6 +9,7 @@
 
 
 import argparse
+from.color import Colors
 
 def argument():
     parser = argparse.ArgumentParser(usage="python3 chunsou.py [options]", add_help=False)
@@ -31,9 +32,10 @@ def argument():
     others.add_argument('-h', '--help', action="help", help="show this help message and exit")
     others.add_argument('-o', '--output',metavar='', help='specified output file')
     others.add_argument('-e', action='store_true', help='displays the specific error cause that cannot be identified by multi-object scanning')
+    
 
     example = parser.add_argument_group("example")
-    example.add_argument(action='store_false', dest="-u , --url            python3 chunsou.py -u http://example.com\n  "
+    example.add_argument(action='store_false', dest="-u , --url            python3 chunsou.py -u 'http://example.com'\n  "
                                                     "-f , --file           python3 chunsou.py -f urls.txt\n  "
                                                     "-p  , --proxy         python3 chunsou.py -u http://example.com -p http://127.0.0.1\n  "
                                                     "-t  , --threads       python3 chunsou.py -f urls.txt -t 100\n  "

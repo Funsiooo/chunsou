@@ -18,10 +18,10 @@ from modules.core.color import Colors
 
 def check_version():
     try:
-        current_version = '1.6'
+        current_version = 'v1.7'
 
-        print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-              f"{Colors.RESET}] {Colors.GREEN}checking for the latest version{Colors.RESET}")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+              f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Checking for latest version{Colors.RESET}")
 
         url = "https://github.com/Funsiooo/chunsou/blob/main/version"
         warnings.filterwarnings('ignore', category=InsecureRequestWarning)
@@ -40,16 +40,16 @@ def check_version():
 
 
         if version == current_version:
-            print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-                  f"{Colors.RESET}] {Colors.GREEN}the current version is the latest version{Colors.RESET}")
+            print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+                  f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Current version {Colors.GREEN}({current_version}){Colors.RESET} {Colors.WHITE}is the latest{Colors.RESET}")
         elif version != current_version:
-            print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-                  f"{Colors.RESET}] {Colors.GREEN}the current version is not the latest version{Colors.RESET}")
+            print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+                  f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Current version{Colors.RESET} {Colors.GREEN}({current_version}){Colors.RESET} {Colors.WHITE}is not the latest{Colors.RESET}")
         else:
-            print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-                  f"{Colors.RESET}] {Colors.GREEN}check failed, please visit the repository to check for yourself{Colors.RESET}")
+            print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+                  f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Check failed. Verify in the repository.{Colors.RESET}")
 
     except Exception as e:
-        print(f"[{Colors.CYAN}{print_start_time()}{Colors.RESET}] [{Colors.GREEN}*{Colors.RESET}] [{Colors.GREEN}INFO"
-              f"{Colors.RESET}] {Colors.GREEN}check failed, please visit the repository to check for yourself{Colors.RESET}")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+              f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Check failed. Verify in the repository.{Colors.RESET}")
 

@@ -46,9 +46,8 @@ def main():
 
 
     except Exception as e:
-        print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}{Colors.RED}[-] Error occurred , Check whether the "
-              f"network, command, or configuration is correct.")
-
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} ERROR: Please check your network, command syntax, or configuration settings.")
 
 if __name__ == '__main__':
     banner_2()

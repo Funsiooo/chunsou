@@ -29,19 +29,20 @@ def banner():
     print(currrent_time)
 
 def banner_2():
-    ORANGE = '\033[01;38;2;252;166;82m'
+    ORANGE = '\033[1;93m'
     RESET = '\033[0m'
     banner = f'''
       ______                                    
 _________  /_____  _________________________  __
 _  ___/_  __ \  / / /_  __ \_  ___/  __ \  / / /
 / /__ _  / / / /_/ /_  / / /(__  )/ /_/ / /_/ / 
-\___/ /_/ /_/\__,_/ /_/ /_//____/ \____/\__,_/  v 1.6               
+\___/ /_/ /_/\__,_/ /_/ /_//____/ \____/\__,_/  v 1.7               
     http://github.com/Funsiooo By Funsiooo
     '''
 
-    currrent_time = f" [*] Starting @ {current_time()}\n"
+    currrent_time = f"\033[1;37m [*] Starting @ {current_time()}\n\033[0m"
     color_banner = ORANGE + banner + RESET
     print(color_banner)
     print(currrent_time)
+
 
