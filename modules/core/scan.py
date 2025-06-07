@@ -463,4 +463,4 @@ def lists_main(file):
 
     except Exception as e:
         print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}{Colors.RED}[-] Error occurred , Check whether the "
-              f"network, command, or configuration is correct.")
+              f"network, command, or configuration is correct")
