@@ -11,7 +11,7 @@ os.system('')
 
 class Colors:
     CYAN = '\033[38;5;67m'
-    GREEN = '\033[01;32m'
+    GREEN = '\033[01;38;5;42m'
     RED = '\033[01;31m'
     BROWN = '\033[01;38;2;252;166;82m'
     WHITE = '\033[37m'

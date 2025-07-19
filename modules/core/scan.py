@@ -90,13 +90,13 @@ def scan_rule(url):
     try:
         ico_content = requests.get(url=get_ico_url(url), headers=headers, timeout=5, verify=False).content
         if not ico_content:
-            print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
-          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} ERROR: Failed to get favicon icon_hash value, check the network condition")
+            print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET}")
         else:
             ico_hash = get_hash(ico_content)
     except requests.exceptions.RequestException as e:
-        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
-          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} ERROR: Failed to get favicon icon_hash value, check the network condition")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET}{Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET}")
 
     with open('modules/config/finger.json', 'r', encoding='utf-8') as file:
         fingerprint = json.load(file)
@@ -132,8 +132,8 @@ def scan_rule(url):
 
         return None, status_code, title
     except Exception as e:
-        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
-          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} ERROR: Ocurred during URL identification,Check whether the network is normal")
+        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}"
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET}")
 
 def single_main():
     args = argument()
@@ -357,7 +357,7 @@ def lists_main(file):
                             else:
                                 result = f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}+{Colors.RESET}{Colors.WHITE}]{Colors.RESET}" \
                                          f" {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} " \
-                                         f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.WHITE}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
+                                         f" {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}None{Colors.RESET} {Colors.WHITE}|{Colors.RESET} {Colors.YELLOW_B}{title}{Colors.RESET} {Colors.WHITE}|{Colors.RESET} " \
                                          f"{Colors.YELLOW_B}{final_key}{Colors.RESET}"
                                 write_result = f"[+] [{status_code}] {url} | None | {title} | {final_key}"
 
