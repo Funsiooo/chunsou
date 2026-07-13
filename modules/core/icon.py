@@ -5,10 +5,9 @@ import base64
 import mmh3
 from urllib.parse import urljoin
 import warnings
+from bs4 import BeautifulSoup
 from urllib3.exceptions import InsecureRequestWarning
 from modules.core.agent import User_Agent  # 自定义模块，用于生成随机User-Agent
-from modules.core.color import Colors
-from modules.core.time import print_start_time
 
 # 计算 favicon 内容的 mmh3 哈希值，用于指纹识别
 def get_hash(content):
@@ -36,43 +35,32 @@ def get_hash(content):
 
 
 # 获取目标网站 favicon 的 URL 地址
-def get_ico_url(url):
+def get_ico_url(url, html_text=None):
     warnings.filterwarnings('ignore', category=InsecureRequestWarning)  # 忽略证书告警
-    headers = User_Agent()  # 使用自定义的 User-Agent
 
     try:
-        # 发送请求，获取 HTML 内容
-        response = requests.get(url, verify=False, timeout=3, headers=headers)
-        html = response.text
+        html = html_text
+        if html is None:
+            response = requests.get(url, verify=False, timeout=5, headers=User_Agent())
+            html = response.text
 
-        # 查找页面中 <link rel="icon"> 或 <link rel="shortcut icon"> 标签
-        icon_index = html.find("<link rel=\"icon\"")
-        shortcut_index = html.find("<link rel=\"shortcut icon\"")
-
-        # 如果两个都找不到，默认使用 /favicon.ico 路径
-        if icon_index == -1 and shortcut_index == -1:
+        if not html:
             return urljoin(url, "/favicon.ico")
 
-        # 如果找到了 rel="icon"，优先使用
-        if icon_index != -1:
-            end_index = html.find(">", icon_index)
-            link_tag = html[icon_index:end_index]
-        else:
-            # 否则使用 rel="shortcut icon"
-            end_index = html.find(">", shortcut_index)
-            link_tag = html[shortcut_index:end_index]
+        soup = BeautifulSoup(html, 'html.parser')
 
-        # 提取 href 路径
-        if 'href="' in link_tag:
-            favicon_path = link_tag.split('href="')[1].split('"')[0]
-            # 拼接成完整 URL 并返回
-            return urljoin(url, favicon_path)
-        else:
-            # 没有 href 字段时，使用默认路径
-            return urljoin(url, "/favicon.ico")
+        def has_icon_rel(value):
+            if not value:
+                return False
+            if isinstance(value, str):
+                return 'icon' in value.lower()
+            return 'icon' in ' '.join(value).lower()
 
-    except requests.exceptions.RequestException as e:
-        # 捕获网络异常并返回 None
-        print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.RED}-{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}{status_code}"
-          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.YELLOW_B}{url}{Colors.RESET} {Colors.RED}ERROR: {e}{Colors.RESET}")
+        icon_link = soup.find('link', rel=has_icon_rel)
+
+        if icon_link and icon_link.get('href'):
+            return urljoin(url, icon_link['href'])
+        return urljoin(url, "/favicon.ico")
+
+    except requests.RequestException:
         return None

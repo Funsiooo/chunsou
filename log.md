@@ -1,5 +1,100 @@
 # 更新日志
+
+## 2026.07.13
+
+-`程序相关`：优化相关BUG
+
+-`功能相关`：新增 AI 指纹识别，集成 DeepSeek 与 ChatGPT 平台，支持两种识别模式及灵活的平台/模型切换。
+
+```
+使用前请先在配置文件 modules/config/config.ini 中配置 API 密钥：
+
+[deepseek_api]
+api_key = "your-deepseek-api-key"
+
+[gpt_api]
+api_key = "your-openai-api-key"
+
+命令参考：
+--ai              智能模式，本地指纹库匹配失败时自动调用 AI 辅助研判
+--ai force        强制模式，忽略本地指纹库，直接对目标进行 AI 识别
+--ai-provider     选择平台：当前支持：DeepSeek 或 ChatGpt
+--ai-model        指定模型，需配合 provider 使用，如 --ai-provider gpt --ai-model gpt-4o
+```
+
+\- `指纹相关`：新增、优化部分指纹
+
+```
+29网课交单平台
+APP分发签名系统
+Array SSLVPN
+Arris VAP2500
+ClusterControl
+ELADMIN
+飞牛云 fnOS
+fogproject
+Hytec Inter HWL-2511-SS
+IP网络广播服务平台
+JeeWMS
+Letta
+LiveGBS
+Mtab书签导航程序
+PEPM
+Quicklancer
+SawtoothSoftware Lighthouse Studio
+SCMS索贝内容管理系统
+Smart S85F
+SolarView Compact
+Tenda FH1201
+WookTeam
+WVP视频平台
+三汇网关管理软件
+中兴ZSR V2路由器
+乐享智能运维管理平台
+九佳易管理系统
+全息AI网络运维平台
+华天软件inforcenter PLM
+博硕 BGM
+同享人力资源管理系统
+唯徳知识产权管理系统
+雨诺 ERP
+因酷教育平台
+大华 ICC 智能物联综合管理平台
+大蚂蚁即时通讯
+天锐绿盾审批系统
+天锐绿盘云文档安全管理皮塔
+奥威亚云视频平台
+安数云综合日志分析系统
+微商城系统
+捷诚管理信息系统
+新开普智慧校园系统
+易捷OA
+普华PowerPMS
+智慧校园安校易管理系统
+智能停车管理系统
+朗新天霁eHR
+正方移动信息服务管理系统
+汉王 EFaceGo
+海康威视安全接入网关
+傲盾信息安全管理系统
+深大智能科技管控平台
+碧海威L7云路由
+维达外贸CRM
+网仕科技Transcoder MS
+群杰印章物联网管理平台
+装盟科技家装ERP
+西软云XMS
+贵成科信票务管理系统
+超级猫签名APP分发平台
+迪博数据决策系统
+金慧综合管理信息系统
+金斗云HKMP
+雄威餐厅数字化综合管理平台
+青龙定时任务管理面板
+```
+
 ## 2025.07.19
+
 \- `程序相关`：微调输出样式
 
 \- `指纹相关`：新增、优化部分指纹

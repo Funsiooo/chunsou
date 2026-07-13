@@ -20,28 +20,34 @@ Chunsou（春蒐）支持多线程扫描（默认50线程，支持自定义）�
 usage: python3 chunsou.py [options]
 
 target:
-  -u , --url            scan for a single url
-  -f , --file           specify a file for multi scanning
+  -u, --url            scan for a single url
+  -f, --file           specify a file for multi scanning
 
 subdomain:
-  -du , --domain        subdomain blasting of a single domain name
-  -df , --domains       subburst the domain name in the specified file
+  -du, --domain        subdomain blasting of a single domain name
+  -df, --domains       subburst the domain name in the specified file
 
 api:
-  -fo , --fofa          call the fofa api for asset collection
-  -hu , --hunter        call the hunter api for asset collection
-  -tip                  spatial mapping search syntax reference
+  -fo, --fofa          call the fofa api for asset collection
+  -hu, --hunter        call the hunter api for asset collection
+  --ai [{auto,force}]  enable semantic analysis, default auto
+  --ai-provider        specify ai provider
+  --ai-model           specify ai model
+  -tip                 spatial mapping search syntax reference
 
 others:
-  -p , --proxy          proxy scan traffic
-  -t , --threads        specify the number of scanning threads, default 50
-  -h, --help            show this help message and exit
-  -o , --output         specified output file
-  -e                    displays the specific error cause that cannot be identified by multi-object scanning
+  -p, --proxy          proxy scan traffic
+  -t, --threads        specify the number of scanning threads, default 50
+  -h, --help           show this help message and exit
+  -o, --output         specified output file
+  -e                   displays the specific error cause that cannot be identified by multi-object scanning
 
 example:
   -u , --url            python3 chunsou.py -u 'http://example.com'
   -f , --file           python3 chunsou.py -f urls.txt
+  --ai                  python3 chunsou.py -u http://example.com --ai
+  --ai auto             python3 chunsou.py -f urls.txt --ai auto --ai-provider deepseek
+  --ai force            python3 chunsou.py -u http://example.com --ai force --ai-provider gpt
   -p  , --proxy         python3 chunsou.py -u http://example.com -p http://127.0.0.1
   -t  , --threads       python3 chunsou.py -f urls.txt -t 100
   -o  , --output        python3 chunsou.py -f -o results.xlsx
@@ -74,6 +80,14 @@ pip3 install -r requirements.txt
 > 具体使用指令
 
 ```python
+# AI 指纹识别（已接入 DeepSeek 与 ChatGPT）
+python3 chunsou.py -u 'http://example.com' --ai
+python3 chunsou.py -u 'http://example.com' --ai --ai-provider deepseek
+python3 chunsou.py -f urls.txt --ai force --ai-provider gpt --ai-model gpt-4o
+
+python3 chunsou.py -u 'http://example.com' --ai force
+python3 chunsou.py -u 'http://example.com' --ai force --ai-provider gpt --ai-model gpt-4o
+
 # 单目标指纹识别（ 注:若url出现特殊字符如 ?&$ 等，不使用单引号包裹会导致报错）
 python3 chunsou.py -u 'http://example.com'
 

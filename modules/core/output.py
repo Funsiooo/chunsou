@@ -21,7 +21,7 @@ from modules.core.check import check_version
 def script_start():
     check_version()
     print(f"{Colors.WHITE}[{Colors.RESET}{Colors.CYAN}{print_start_time()}{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.GREEN}*{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}[{Colors.RESET}{Colors.CYAN}INFO"
-          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Fingerprint schema: Website | Title | Stack{Colors.RESET}\n")
+          f"{Colors.RESET}{Colors.WHITE}]{Colors.RESET} {Colors.WHITE}Fingerprint result output is ready{Colors.RESET}\n")
     # print(f"{Colors.CYAN}{print_start_time()} {Colors.GREEN}[*]{Colors.RESET} {Colors.GREEN}[INFO"
     #       f"]{Colors.RESET} {Colors.GREEN}the program starts running, and the following are the fingerprint recognition results{Colors.RESET}")
 
@@ -105,9 +105,10 @@ def hunter_end():
 
 
 
-def scan_save_to_excle(results):
+def scan_save_to_excle(results, csv_headers=None):
     out_file = output_dir()
-    csv_headers = ['状态码', '网页URL', '网页标题', '网站技术栈', '指纹结果']
+    if csv_headers is None:
+        csv_headers = ['状态码', '网页URL', '网页标题', '网站技术栈', '指纹结果']
     filename = 'output.csv'
     with open(filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)

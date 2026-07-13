@@ -28,7 +28,7 @@ def check_version():
 
         headers = User_Agent()
 
-        response = requests.get(url, headers=headers, timeout=3, verify=False, proxies=proxies(), allow_redirects=False)
+        response = requests.get(url, headers=headers, timeout=5, verify=False, proxies=proxies(), allow_redirects=False)
 
         html = response.text
 

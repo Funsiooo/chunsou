@@ -9,10 +9,32 @@
 
 
 import argparse
-from.color import Colors
 
 def argument():
-    parser = argparse.ArgumentParser(usage="python3 chunsou.py [options]", add_help=False)
+    example_text = (
+        "example:\n"
+        "  -u , --url            python3 chunsou.py -u 'http://example.com'\n"
+        "  -f , --file           python3 chunsou.py -f urls.txt\n"
+        "  --ai                  python3 chunsou.py -u http://example.com --ai\n"
+        "  --ai auto             python3 chunsou.py -f urls.txt --ai auto --ai-provider deepseek\n"
+        "  --ai force            python3 chunsou.py -u http://example.com --ai force --ai-provider gpt\n"
+        "  -p  , --proxy         python3 chunsou.py -u http://example.com -p http://127.0.0.1\n"
+        "  -t  , --threads       python3 chunsou.py -f urls.txt -t 100\n"
+        "  -o  , --output        python3 chunsou.py -f -o results.xlsx\n"
+        "  -du , --domain        python3 chunsou.py -du example.com\n"
+        "  -df , --domains       python3 chunsou.py -df domains.txt\n"
+        "  -fo , --fofa          python3 chunsou.py -fo domain=\"example.com\"\n"
+        "  -hu , --hunter        python3 chunsou.py -hu domain=\"example.com\"\n"
+        "  -e  ,                 python3 chunsou.py -f urls.txt -e\n"
+        "  -tip,                 python3 chunsou.py -tip"
+        
+    )
+    parser = argparse.ArgumentParser(
+        usage="python3 chunsou.py [options]",
+        add_help=False,
+        epilog=example_text,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     target = parser.add_argument_group("target")
     target.add_argument('-u', '--url', metavar='', help='scan for a single url')
     target.add_argument('-f', '--file', metavar='', help='specify a file for multi scanning')
@@ -24,6 +46,11 @@ def argument():
     api = parser.add_argument_group("api")
     api.add_argument('-fo', '--fofa', metavar='', help='call the fofa api for asset collection')
     api.add_argument('-hu', '--hunter', metavar='', help='call the hunter api for asset collection')
+    api.add_argument('--ai', nargs='?', const='auto', choices=['auto', 'force'],
+                     help='enable semantic analysis, default auto')
+    api.add_argument('--ai-provider', choices=['gpt', 'deepseek'], metavar='',
+                     help='specify ai provider')
+    api.add_argument('--ai-model', metavar='', help='specify ai model')
     api.add_argument('-tip', action='store_true', help='spatial mapping search syntax reference')
 
     others = parser.add_argument_group("others")
@@ -32,19 +59,5 @@ def argument():
     others.add_argument('-h', '--help', action="help", help="show this help message and exit")
     others.add_argument('-o', '--output',metavar='', help='specified output file')
     others.add_argument('-e', action='store_true', help='displays the specific error cause that cannot be identified by multi-object scanning')
-    
-
-    example = parser.add_argument_group("example")
-    example.add_argument(action='store_false', dest="-u , --url            python3 chunsou.py -u 'http://example.com'\n  "
-                                                    "-f , --file           python3 chunsou.py -f urls.txt\n  "
-                                                    "-p  , --proxy         python3 chunsou.py -u http://example.com -p http://127.0.0.1\n  "
-                                                    "-t  , --threads       python3 chunsou.py -f urls.txt -t 100\n  "
-                                                    "-o  , --output        python3 chunsou.py -f -o results.xlsx\n  "        
-                                                    "-du , --domain        python3 chunsou.py -du example.com\n  "
-                                                    "-df , --domains       python3 chunsou.py -df domains.txt\n  "
-                                                    "-fo , --fofa          python3 chunsou.py -fo domain=\"example.com\"\n  "
-                                                    "-hu , --hunter        python3 chunsou.py -hu domain=\"example.com\"\n  "
-                                                    "-e  ,                 python3 chunsou.py -f urls.txt -e\n  "
-                                                    "-tip,                 python3 chunsou.py -tip"  )
 
     return parser.parse_args()
