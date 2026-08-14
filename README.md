@@ -170,4 +170,4 @@ python3 chunsou.py -f urls.txt -p http://127.0.0.1:7890
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Funsiooo/chunsou&type=Date)](https://star-history.com/#Funsiooo/chunsou&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=Funsiooo/chunsou&type=Date)](https://star-history.dera.page/#Funsiooo/chunsou&Date)

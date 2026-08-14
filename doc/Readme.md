@@ -165,4 +165,4 @@ The fingerprint rules currently support four matching methods: `website keywords
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Funsiooo/chunsou&type=Date)](https://star-history.com/#Funsiooo/chunsou&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=Funsiooo/chunsou&type=Date)](https://star-history.dera.page/#Funsiooo/chunsou&Date)
